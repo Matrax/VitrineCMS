@@ -5,6 +5,7 @@ declare(strict_types = 1);
 /**
  * Classe représentant un paragraphe avec une image en HTML.
  * @type paragraph
+ * @name Paragraphe avec image
  * @brief Classe représentant un paragraphe avec une image en HTML.
  * @author Alexandre Pierret
  * @version 1.0

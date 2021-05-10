@@ -5,6 +5,7 @@ declare(strict_types = 1);
 /**
  * Classe représentant un panneau google map.
  * @type google-map
+ * @name Google Map
  * @brief Classe représentant un panneau google map.
  * @author Alexandre Pierret
  * @version 1.0

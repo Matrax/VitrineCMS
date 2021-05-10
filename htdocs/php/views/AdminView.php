@@ -134,45 +134,8 @@ class AdminView extends View
         $html .= "<div class=\"modal-container-content\">";
         foreach ($containers as $key => $value) 
         {
-            switch($value)
-            {
-                case "Banner":
-                    $html .= "<div class=\"modal-container\" value=\"".$value."\">Bannière</div>";
-                    break;
-                case "CardContainer":
-                    $html .= "<div class=\"modal-container\" value=\"".$value."\">Conteneur de carte</div>";
-                    break;
-                case "Footer":
-                    $html .= "<div class=\"modal-container\" value=\"".$value."\">Bas de page</div>";
-                    break;
-                case "Navbar":
-                    $html .= "<div class=\"modal-container\" value=\"".$value."\">Barre de navigation</div>";
-                    break;
-                case "GoogleMap":
-                    $html .= "<div class=\"modal-container\" value=\"".$value."\">Map GoogleMap</div>";
-                    break;
-                case "OpenStreetMap":
-                    $html .= "<div class=\"modal-container\" value=\"".$value."\">Map OpenStreetMap</div>";
-                    break;
-                case "HeadbandContainer":
-                    $html .= "<div class=\"modal-container\" value=\"".$value."\">Conteneur de bandeau</div>";
-                    break;
-                case "MailSender":
-                    $html .= "<div class=\"modal-container\" value=\"".$value."\">Formulaire de contact</div>";
-                    break;
-                case "Paragraph":
-                    $html .= "<div class=\"modal-container\" value=\"".$value."\">Paragraphe avec image</div>";
-                    break;
-                case "Panel":
-                    $html .= "<div class=\"modal-container\" value=\"".$value."\">Panneau de texte</div>";
-                    break;
-                case "FacebookCarrousel":
-                    $html .= "<div class=\"modal-container\" value=\"".$value."\">Carrousel Facebook</div>";
-                    break;
-                case "Gallery":
-                    $html .= "<div class=\"modal-container\" value=\"".$value."\">Gallerie d'image</div>";
-                    break;
-            }
+            $name = ClassUtils::getContainerName($value);
+            $html .= "<div class=\"modal-container\" value=\"".$value."\">".$name."</div>";
         }
         $html .= "</div>";
         $html .= "<div class=\"modal-button-content\">";

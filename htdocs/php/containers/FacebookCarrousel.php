@@ -5,6 +5,7 @@ declare(strict_types = 1);
 /**
  * Classe représentant un carrousel relié à facebook.
  * @type facebook-carrousel
+ * @name Carrousel Facebook
  * @brief Classe représentant un carrousel relié à facebook.
  * @author Alexandre Pierret
  * @version 1.0

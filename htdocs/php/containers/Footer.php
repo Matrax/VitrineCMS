@@ -5,6 +5,7 @@ declare(strict_types = 1);
 /**
  * Classe représentant un bas de page.
  * @type footer
+ * @name Bas de page
  * @brief Classe représentant un bas de page.
  * @author Alexandre Pierret
  * @version 1.0

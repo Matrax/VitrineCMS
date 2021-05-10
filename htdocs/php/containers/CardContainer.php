@@ -5,6 +5,7 @@ declare(strict_types = 1);
 /**
  * Classe représentant un conteneur de carte en HTML.
  * @type card-container
+ * @name Conteneur de carte
  * @brief Classe représentant un conteneur de carte en HTML.
  * @author Alexandre Pierret
  * @version 1.0

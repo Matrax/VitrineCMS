@@ -5,6 +5,7 @@ declare(strict_types = 1);
 /**
  * Classe représentant un panneau d'envoie de mail.
  * @type mail-sender
+ * @name Panneau de contact
  * @brief Classe représentant un panneau d'envoie de mail.
  * @author Alexandre Pierret
  * @version 1.0

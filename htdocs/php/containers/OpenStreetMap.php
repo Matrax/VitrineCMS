@@ -5,6 +5,7 @@ declare(strict_types = 1);
 /**
  * Classe représentant un panneau openstreetmap.
  * @type openstreet-map
+ * @name OpenStreetMap
  * @brief Classe représentant un panneau openstreetmap.
  * @author Alexandre Pierret
  * @version 1.0

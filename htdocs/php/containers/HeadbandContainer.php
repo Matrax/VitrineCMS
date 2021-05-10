@@ -5,6 +5,7 @@ declare(strict_types = 1);
 /**
  * Classe représentant un conteneur de bandeau.
  * @type headband-container
+ * @name Conteneur de bandeau
  * @brief Classe représentant un conteneur de bandeau.
  * @author Alexandre Pierret
  * @version 1.0

@@ -5,6 +5,7 @@ declare(strict_types = 1);
 /**
  * Classe représentant un panel en HTML.
  * @type panel
+ * @name Panneau de texte
  * @brief Classe représentant un panel en HTML.
  * @author Alexandre Pierret
  * @version 1.0

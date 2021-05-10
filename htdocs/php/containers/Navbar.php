@@ -5,6 +5,7 @@ declare(strict_types = 1);
 /**
  * Classe représentant une barre de navigation.
  * @type navbar
+ * @name Barre de navigation
  * @brief Classe représentant une barre de navigation.
  * @author Alexandre Pierret
  * @version 1.0

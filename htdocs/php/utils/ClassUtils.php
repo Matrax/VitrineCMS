@@ -39,6 +39,27 @@ class ClassUtils
     }
 
     /**
+     * Cette fonction renvoiele nom de la classe en francais de la classe
+     * passé en paramètre.
+     * Le nom correspond à la métadonnée @name écrit dans la classe.
+     * @param string $name Le nom de la classe en francais
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
+    public static function getContainerName(string $className) : string
+    {
+        $name = "";
+        $class = new ReflectionClass($className);
+        $comment = $class->getDocComment();
+        if($comment == true) 
+        {
+            preg_match_all("#@(.*?)\n#s", $comment, $annotations);
+            $name = chop(substr($annotations[0][1], 6), PHP_EOL);
+        }
+        return $name;
+    }
+
+    /**
      * Cette fonction permet de récuperer sous forme de liste toutes les classes conteneurs HTML.
      * Le tableau va contenir le nom de ces classes.
      * @return array toutes les classes conteneurs HTML sous forme de liste.
@@ -55,6 +76,22 @@ class ClassUtils
             array_push($containers, $name);
         }
         return $containers;
+    }
+
+    /**
+     * Cette fonction permet d'inclure toutes les classes php des conteneurs HTML et élements HTML.
+     * @param string $phpPath Le chemin vers le dossier php
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
+    public static function includeAllContainerClasses(string $phpPath)
+    {
+        $elements = array();
+        $containers = array();
+        $directory = array_diff(scandir($phpPath."/elements", SCANDIR_SORT_NONE), [".", ".."]);
+        foreach ($directory as $key => $value) { require_once($phpPath."/elements"."/".$value); }
+        $directory = array_diff(scandir($phpPath."/containers", SCANDIR_SORT_NONE), [".", ".."]);
+        foreach ($directory as $key => $value) { require_once($phpPath."/containers"."/".$value); }
     }
     
     /**

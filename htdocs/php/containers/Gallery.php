@@ -5,6 +5,7 @@ declare(strict_types = 1);
 /**
  * Classe représentant une gallerie d'image en HTML.
  * @type gallery
+ * @name Gallerie d'image
  * @brief Classe représentant une gallerie d'image en HTML.
  * @author Alexandre Pierret
  * @version 1.0

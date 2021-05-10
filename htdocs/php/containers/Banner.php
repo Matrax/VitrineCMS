@@ -5,6 +5,7 @@ declare(strict_types = 1);
 /**
  * Classe représentant une bannière en HTML.
  * @type banner
+ * @name Bannière
  * @brief Classe représentant une bannière en HTML.
  * @author Alexandre Pierret
  * @version 1.0
