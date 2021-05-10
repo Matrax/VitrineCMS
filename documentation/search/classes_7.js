@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mailsender_93',['MailSender',['../de/d1e/classMailSender.html',1,'']]]
+  ['mailsender_93',['MailSender',['../classMailSender.html',1,'']]]
 ];

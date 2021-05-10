@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dispatcher_83',['Dispatcher',['../dc/d03/classDispatcher.html',1,'']]]
+  ['dispatcher_83',['Dispatcher',['../classDispatcher.html',1,'']]]
 ];
