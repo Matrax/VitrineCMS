@@ -1,5 +1,20 @@
 # Explications de MiniCMS
 
+## Technologies
+PHP 8.0 / JavaScript / CSS
+
+## Installation
+
+Il suffit de mettre le contenu du dossier htdocs 
+dans la partie publique de votre site web (htdocs, public_html ...).
+Le fichier configuration.json doit être obligatoirement présent mais
+pas dans la partie publique de votre site et dans le dossier parent
+du dossier ou se trouve votre site.
+
+Le dossier documentation n'est pas obligatoire, il s'agit
+simplement d'un dossier contenant une documentation
+généré avec Doxygen.
+
 ## Description
 Il s'agit d'un CMS français conçu pour la création de site vitrine, configurable
 facilement par un développeur ou un simple utilisateur.
@@ -11,10 +26,7 @@ pas programmer puisse concevoir son site ou apporter
 des modifications après son développement à l'aide de la page
 administrateur sans avoir l'expertise d'un développeur.
 
-## Technologies
-PHP 8.0 / JavaScript / CSS
-
-## Fonctionnement global
+## Fonctionnement
 Le CMS utilise le système de controlleur de vue (FrontController.php).
 C'est à dire que le site n'est composé que d'un seul
 poit d'entrer (index.php), et selon les paramètres GET
@@ -30,7 +42,8 @@ format (HTML ou XML par exemple).
 
 ## Demander une vue
 L'utilisateur demande une vue en faisant une requête à l'aide du lien
-{domaine}/index.php.
+{domaine}/index.php. (ou simplement avec le nom de domaine, le serveur
+web appellera index.php automatiquement)
 L'utilisateur peut préciser la page du site qu'il souhaite accéder
 avec {domaine}/index.php?area={page}. Le dispatcher se chargera
 de générer la vue utilisateur avec la page demandé, puis
@@ -42,3 +55,10 @@ l'utilisateur doit ajouter le rôle dans le lien avec
 Par défaut, si aucune page n'est spécifié dans le lien, la page
 index sera demandé. Et si aucun role n'est spécifié, la vue
 utilisateur sera demandé.
+
+## Vue administrateur
+
+Pour accéder à la vue administrateur d'une page, une connexion est demandé.
+La connexion demande le login précisé dans le fichier de configuration
+et le mot de passe crypté en sha512. Le mot de passe entré dans le fichier 
+de configuration doit être en sha512 uniquement.
