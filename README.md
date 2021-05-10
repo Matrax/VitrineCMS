@@ -1,4 +1,4 @@
-# Explications de MiniCMS
+# Explications de VitrineCMS
 
 ## Technologies
 PHP 8.0 / JavaScript / CSS
@@ -18,10 +18,10 @@ généré avec Doxygen.
 ## Description
 Il s'agit d'un CMS français conçu pour la création de site vitrine, configurable
 facilement par un développeur ou un simple utilisateur.
-MiniCMS est conçu pour être évolutif, un développeur
+VitrineCMS est conçu pour être évolutif, un développeur
 peut créer ses propre conteneurs HTML facilement pour apporter 
 de l'originalité aux sites qu'il développe.
-Mais MiniCMS est aussi conçu pour qu'un utilisateur ne sachant 
+Mais VitrineCMS est aussi conçu pour qu'un utilisateur ne sachant 
 pas programmer puisse concevoir son site ou apporter
 des modifications après son développement à l'aide de la page
 administrateur sans avoir l'expertise d'un développeur.
