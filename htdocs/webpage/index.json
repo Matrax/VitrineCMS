@@ -1,0 +1,16 @@
+{
+    "0": {
+        "type": "head",
+        "title": "Titre du site"
+    },
+    "1": {
+        "type": "navbar",
+        "elements": {
+            "0": {
+                "type": "navbar-button",
+                "text": "Accueil",
+                "url": "index"
+            }
+        }
+    }
+}

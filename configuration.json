@@ -1,0 +1,8 @@
+{
+    "template": "default",
+    "description": "Description du site",
+    "administration-link": "yes",
+    "show-error": "yes",
+    "login": "login",
+    "password": "sha512 password"
+}

@@ -1,0 +1,128 @@
+.navbar-administration
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    gap: 5px;
+}
+
+.navbar-line
+{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.navbar-create-input
+{
+    margin: 10px;
+    height: 20px;
+    width: 200px;
+}
+
+.navbar-button-administration
+{
+    width: 100px;
+    height: 20px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.navbar-button-save-administration
+{
+    width: 100px;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    background-color: green;
+    border-radius: 10px;
+}
+
+.navbar-button-create-administration
+{
+    width: 100px;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    background-color: yellow;
+    border-radius: 10px;
+}
+
+.navbar-button-delete-administration
+{
+    width: 100px;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    background-color: darkred;
+    border-radius: 10px;
+}
+
+.navbar-button-quit-administration
+{
+    width: 100px;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    background-color: orangered;
+    border-radius: 10px;
+}
+
+.navbar-button-disconnect-administration
+{
+    width: 100px;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    background-color: red;
+    border-radius: 10px;
+}
+
+.navbar-button-administration:hover {cursor: pointer; filter: brightness(0.8); }
+.navbar-button-save-administration:hover {cursor: pointer; filter: brightness(0.8); }
+.navbar-button-create-administration:hover {cursor: pointer; filter: brightness(0.8); }
+.navbar-button-delete-administration:hover {cursor: pointer; filter: brightness(0.8); }
+.navbar-button-quit-administration:hover {cursor: pointer; filter: brightness(0.8); }
+.navbar-button-disconnect-administration:hover {cursor: pointer; filter: brightness(0.8); }
+
+@media (max-width: 900px)
+{
+
+    .navbar-administration
+    {
+        margin: 0px;
+        padding: 0px;
+        flex-direction: row;
+    }
+
+    .navbar-button-administration { margin: 0px; padding: 0px; width: 100%; height: 40px; }
+    .navbar-button-save-administration {margin: 0px; padding: 0px; width: 100%;}
+    .navbar-button-create-administration {margin: 0px; padding: 0px; width: 100%;}
+    .navbar-button-delete-administration {margin: 0px; padding: 0px; width: 100%;}
+    .navbar-button-quit-administration {margin: 0px; padding: 0px; width: 100%;}
+    .navbar-button-disconnect-administration {margin: 0px; padding: 0px; width: 100%;}
+    .navbar-create-input {margin: 0px; padding: 0px; width: 100%;}
+
+    .navbar-line 
+    {
+        margin: 0px;
+        padding: 0px;
+        flex-direction: column;
+        width: 100%;
+    }
+}

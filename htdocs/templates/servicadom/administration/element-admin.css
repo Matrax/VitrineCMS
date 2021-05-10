@@ -1,0 +1,153 @@
+.element-container
+{
+    margin: 40px;
+    padding: 0px;
+    display: grid;
+    grid-template-columns: 1fr;
+    border-bottom: 2px solid black;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.add-button
+{
+    width: 100%;
+    background-color: orange;
+}
+
+.element-manager-2
+{
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    border-radius: 5px;
+    gap: 20px;
+}
+
+.element-manager-3
+{
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    border-radius: 5px;
+    gap: 20px;
+}
+
+.element-manager-4
+{
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    border-radius: 5px;
+    gap: 20px;
+}
+
+.element-title
+{
+    margin: 10px;
+    padding: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    display: inline;
+}
+
+.elements-options
+{
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.subelement-create-button
+{
+    margin: 10px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: orange;
+}
+
+.element-swap-button
+{
+    margin: 10px;
+    width: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    background-color: orange;
+}
+
+.element-delete-button
+{
+    margin: 10px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: red;
+}
+
+.subelement-delete-button
+{
+    width: 200px;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: red;
+}
+
+.add-button:hover { cursor: pointer; filter: brightness(0.8); }
+.subelement-create-button:hover { cursor: pointer; filter: brightness(0.8); }
+.element-delete-button:hover { cursor: pointer; filter: brightness(0.8); }
+.element-swap-button:hover { cursor: pointer; filter: brightness(0.8); }
+.subelement-delete-button:hover { cursor: pointer; filter: brightness(0.8); }
+
+@media (max-width: 900px)
+{
+    .element-container
+    {
+        margin: 0px;
+        margin-top: 10px;
+    }
+
+    .element-title
+    {
+        margin: 5px;
+    }
+
+    .element-manager-2
+    {
+        margin: 5px;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .element-manager-3
+    {
+        margin: 5px;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .element-manager-4
+    {
+        margin: 5px;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+}
