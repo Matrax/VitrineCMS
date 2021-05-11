@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['navbar_58',['Navbar',['../classNavbar.html',1,'']]],
-  ['navbarbutton_59',['NavbarButton',['../classNavbarButton.html',1,'']]],
-  ['navbaritem_60',['NavbarItem',['../classNavbarItem.html',1,'']]]
+  ['mail_2ephp_140',['mail.php',['../mail_8php.html',1,'']]],
+  ['mailsender_141',['MailSender',['../classMailSender.html',1,'']]],
+  ['mailsender_2ephp_142',['MailSender.php',['../MailSender_8php.html',1,'']]]
 ];

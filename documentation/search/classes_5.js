@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['gallery_87',['Gallery',['../classGallery.html',1,'']]],
-  ['googlemap_88',['GoogleMap',['../classGoogleMap.html',1,'']]]
+  ['gallery_194',['Gallery',['../classGallery.html',1,'']]],
+  ['googlemap_195',['GoogleMap',['../classGoogleMap.html',1,'']]]
 ];

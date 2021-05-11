@@ -65,6 +65,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pri-methods">Fonctions membres privées</a> &#124;
 <a href="classDispatcher-members.html">Liste de tous les membres</a>  </div>
   <div class="headertitle">
 <div class="title">Référence de la classe Dispatcher</div>  </div>
@@ -80,6 +81,13 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:a62ba56a9c99d2b25616023812d965c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af79aa0f7056d4bc6765f940a9a0fb039"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDispatcher.html#af79aa0f7056d4bc6765f940a9a0fb039">dispatch</a> ()</td></tr>
 <tr class="separator:af79aa0f7056d4bc6765f940a9a0fb039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Fonctions membres privées</h2></td></tr>
+<tr class="memitem:aff51741df48a2fd57b8c83cc63695181"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDispatcher.html#aff51741df48a2fd57b8c83cc63695181">generateView</a> ()</td></tr>
+<tr class="separator:aff51741df48a2fd57b8c83cc63695181"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5f06b2b1a090c54df7e99345cf7681e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDispatcher.html#aa5f06b2b1a090c54df7e99345cf7681e">readArea</a> ()</td></tr>
+<tr class="separator:aa5f06b2b1a090c54df7e99345cf7681e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p class="">Classe permettant de générer la vue à l'utilisateur. </p>
@@ -125,8 +133,62 @@ Fonctions membres publiques</h2></td></tr>
 
 </div>
 </div>
+<a id="aff51741df48a2fd57b8c83cc63695181"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff51741df48a2fd57b8c83cc63695181">&#9670;&nbsp;</a></span>generateView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dispatcher::generateView </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p class="">Cette méthode permet de générer la vue demandée par l'utilisateur ou l'administrateur. Si l'utilisateur n'a pas de role, la vue utilisateur est renvoyé. </p><dl class="section author"><dt>Auteur</dt><dd>Alexandre Pierret </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+
+</div>
+</div>
+<a id="aa5f06b2b1a090c54df7e99345cf7681e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5f06b2b1a090c54df7e99345cf7681e">&#9670;&nbsp;</a></span>readArea()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dispatcher::readArea </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p class="">Cette méthode permet de lire le fichier json de la vue demandée avec le paramètre GET area. Si la vue n'existe pas, le fichier index.json est lu à la place. </p><dl class="section author"><dt>Auteur</dt><dd>Alexandre Pierret </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+
+</div>
+</div>
 <hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
-<li>htdocs/php/controllers/Dispatcher.php</li>
+<li>htdocs/php/controllers/<a class="el" href="Dispatcher_8php.html">Dispatcher.php</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
