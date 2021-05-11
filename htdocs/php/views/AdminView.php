@@ -95,8 +95,10 @@ class AdminView extends View
         $html .= "<div class=\"modal-image-content\">";
         foreach (array_diff(scandir("content/images"), [".", ".."]) as $key => $value) 
         {
+            $html .= "<div class=\"modal-container-content\">";
             $html .= "<img class=\"modal-image\" src=\"content/images/".$value."\" width=100px height=100px>";
             $html .= "<div class=\"delete-image-button\" image=\"".$value."\">Supprimer</div>";
+            $html .= "</div>";
         }
         $html .= "</div>";
         $html .= "<div class=\"modal-button-content\">";

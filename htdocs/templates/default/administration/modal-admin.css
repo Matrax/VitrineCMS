@@ -20,7 +20,9 @@
 
 .modal-image-content
 {
-    height: 300px;
+    display: flex;
+    flex-direction: row;
+    height: 200px;
     overflow: auto;
 }
 
@@ -32,8 +34,8 @@
 
 .modal-container-content
 {
-    height: 300px;
-    overflow: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .modal-button-content
