@@ -16,6 +16,6 @@ var searchData=
   ['getpages_126',['getPages',['../classFrontController.html#afc4b7962b162f284bf3dcf6ca6f469bd',1,'FrontController']]],
   ['getrole_127',['getRole',['../classFrontController.html#abe10447859f3698c7ecff93f24d1dd79',1,'FrontController']]],
   ['gettemplate_128',['getTemplate',['../classView.html#a1ff00cea11f84bf2d453e4423b4bd863',1,'View']]],
-  ['gettext_129',['getText',['../classNavbarButton.html#ad0d55fa52f047bf682f7f3da6e6e21cc',1,'NavbarButton\getText()'],['../classNavbarItem.html#a3e72adac198c8e1ed3f3914d43d5fc51',1,'NavbarItem\getText()']]],
+  ['gettext_129',['getText',['../classNavbarItem.html#a3e72adac198c8e1ed3f3914d43d5fc51',1,'NavbarItem\getText()'],['../classNavbarButton.html#ad0d55fa52f047bf682f7f3da6e6e21cc',1,'NavbarButton\getText()']]],
   ['geturl_130',['getUrl',['../classNavbarButton.html#a4aeed3c7d750760ec270e496fbbb4a64',1,'NavbarButton']]]
 ];

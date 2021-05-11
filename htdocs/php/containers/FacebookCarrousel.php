@@ -120,17 +120,26 @@ class FacebookCarrousel extends HTMLContent
         $url = file_get_contents("https://graph.facebook.com/v10.0/".$this->page_id."/feed?access_token=".$this->token."&limit=5");
         if($url != false) $feed = json_decode($url, true);
         $this->appendHtml("<div class=\"facebook-carrousel-panel\">");
-        $this->appendHtml("<img class=\"facebook-carrousel-image\" src=\"content/facebook.png\" width=100% height=100%>");
+        $this->appendHtml("<img class=\"facebook-carrousel-logo\" src=\"content/facebook.png\" width=100% height=100%>");
         $this->appendHtml("<div class=\"facebook-carrousel-container\">");
         if(isset($feed))
         {
             $data = array_values($feed["data"]);
             for($i = 0; $i < sizeof($data); $i++)
             {
-                if(isset($data[$i]["message"]) == false) continue;
-                $time = substr($data[$i]["created_time"], 0, 10);
-                $this->appendHtml("<div class=\"facebook-carrousel-content\" page=\"".$i."\">".$data[$i]["message"]." | ".$time."</div>");
-                $count++;
+                if(isset($data[$i]["message"])) 
+                {
+                    $message = $data[$i]["message"];
+                    $time = substr($data[$i]["created_time"], 0, 10);
+                    $this->appendHtml("<div class=\"facebook-carrousel-content\" page=\"".$count."\">".$message." | ".$time);
+                    if(isset($data[$i]["full_picture"])) 
+                    {
+                        $full_picture = $data[$i]["full_picture"];
+                        $this->appendHtml("<img class=\"facebook-carrousel-image\" src=\"".$full_picture."\" width=100% height=100%>");
+                    }
+                    $this->appendHtml("</div>");
+                    $count++;
+                }
             }
         }
         $this->appendHtml("</div>");

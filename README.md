@@ -4,7 +4,6 @@
 PHP 8.0 / JavaScript / CSS
 
 ## Installation
-
 Il suffit de mettre le contenu du dossier htdocs 
 dans la partie publique de votre site web (htdocs, public_html ...).
 Le fichier configuration.json doit être obligatoirement présent mais
@@ -57,7 +56,6 @@ index sera demandé. Et si aucun role n'est spécifié, la vue
 utilisateur sera demandé.
 
 ## Vue administrateur
-
 Pour accéder à la vue administrateur d'une page, une connexion est demandé.
 La connexion demande le login précisé dans le fichier de configuration
 et le mot de passe crypté en sha512. Le mot de passe entré dans le fichier 
