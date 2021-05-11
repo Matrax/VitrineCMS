@@ -58,6 +58,9 @@ function createElementEvent()
                 case "footer":
                     window.location.href = "scripts/create_image_footer.php?url=" + url + "&container-id=" + containerid;
                     break;
+                case "gallery":
+                    window.location.href = "scripts/create_gallery_image.php?url=" + url + "&container-id=" + containerid;
+                    break;
             }
         });
     }

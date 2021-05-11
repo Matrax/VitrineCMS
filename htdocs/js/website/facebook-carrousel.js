@@ -1,6 +1,8 @@
 window.addEventListener("load", function()
 {
     var carrousel = document.getElementsByClassName("facebook-carrousel")[0];
+    if(carrousel == null) return;
+    
     var pagination = carrousel.getElementsByClassName("facebook-carrousel-pagination")[0];
     var contents = carrousel.getElementsByClassName("facebook-carrousel-content");
     var pages = pagination.getElementsByClassName("facebook-carrousel-page");

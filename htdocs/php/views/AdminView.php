@@ -33,11 +33,11 @@ class AdminView extends View
      */
     public function render()
     {
-        $this->getBody()->appendHtml("<button role=\"admin\" class=\"add-button\" target=\"container\" target-id=\"1\">Ajouter un élement</button>");
+        $this->getBody()->appendHtml("<button class=\"add-button\" target=\"container\" target-id=\"1\">Ajouter un élement</button>");
         for($i = 0; $i < sizeof($this->getContents()); $i++)
         {
             $this->getBody()->appendHtml($this->getContents()[$i]->getAdminHtml());
-            $this->getBody()->appendHtml("<button role=\"admin\" class=\"add-button\" target=\"container\" target-id=\"".($i + 2)."\">Ajouter un élement</button>");
+            $this->getBody()->appendHtml("<button class=\"add-button\" target=\"container\" target-id=\"".($i + 2)."\">Ajouter un élement</button>");
         }
         $html = "<!doctype html>";
         $html .= "<html lang=\"fr\">";

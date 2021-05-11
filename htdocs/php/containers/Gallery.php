@@ -37,6 +37,10 @@ class Gallery extends HTMLContent
     public static function loadFromJSON(array $data) : Gallery
     {
         $gallery = new Gallery();
+        foreach ($data["elements"] as $key => $value) 
+        {
+            $gallery->addImage($value["image"]);
+        }
         return $gallery;
     }
 
@@ -68,7 +72,10 @@ class Gallery extends HTMLContent
     public function onCreateHtml() : string
     {
         $this->appendHtml("<div class=\"gallery\">");
-        //todo
+        foreach ($this->images as $key => $value) 
+        {
+            $this->appendHtml("<img class=\"gallery-image\" src=\"".$value."\" width=100% height=100%>");
+        }
         $this->appendHtml("</div>");
         return $this->html;
     }
@@ -84,15 +91,23 @@ class Gallery extends HTMLContent
         $this->appendHtml("<div class=\"element-container\">");
         $this->appendHtml("<div class=\"element\" id=\"".$this->id."\">");
         $this->appendHtml("<div class=\"gallery\">");
-        //todo
+        for($i = 0; $i < sizeof($this->images); $i++)
+        {
+            $this->appendHtml("<img class=\"gallery-image\" container-id=\"".$this->id."\" id=\"".$i."\" src=\"".$this->images[$i]."\" alt=\"image\" width=100% height=100%>");
+        }
         $this->appendHtml("</div>");
         $this->appendHtml("</div>");
         $this->appendHtml("<div class=\"element-title\">Image</div>");
         $this->appendHtml("<div class=\"element-manager-2\">");
-        //todo
+        for($i = 0; $i < sizeof($this->images); $i++)
+        {
+            $this->appendHtml("<button role=\"admin\" target=\"image\" container-id=\"".$this->id."\" id=\"".$i."\" value=\"".$this->images[$i]."\" placeholder=\"URL Image\">".$this->images[$i]."</button>");
+            $this->appendHtml("<div class=\"subelement-delete-button\" container-id=\"".$this->id."\" id=\"".$i."\">Supprimer l'image</div>");
+        }
         $this->appendHtml("</div>");
         $this->appendHtml("<div class=\"element-title\">Options</div>");
         $this->appendHtml("<div class=\"elements-options\">");
+        $this->appendHtml("<div class=\"subelement-create-button\" target=\"gallery\" container-id=\"".$this->id."\">Ajouter une image</div>");
         $this->appendHtml("<div class=\"element-delete-button\" id=\"".$this->id."\">Supprimer</div>");
         $this->appendHtml("<svg class=\"element-swap-button\" id=\"".$this->id."\" action=\"up\" xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" viewBox=\"0 0 16 16\">");
         $this->appendHtml("<path fill-rule=\"evenodd\" d=\"M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z\"/>");
@@ -105,4 +120,9 @@ class Gallery extends HTMLContent
         return $this->html;
     }
     
+    public function addImage(string $image)
+    {
+        array_push($this->images, $image);
+    }
+
 }

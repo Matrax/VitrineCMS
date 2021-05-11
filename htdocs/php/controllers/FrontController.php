@@ -76,7 +76,7 @@ class FrontController
         }
         return $list;
     }
-
+    
     /**
      * Cette méthode permet le rendu de la vue à l'utilisateur.
      * Cette méthode appelle le dispatcher pour choisir la bonne vue
