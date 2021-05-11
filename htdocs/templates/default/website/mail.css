@@ -59,7 +59,7 @@ textarea
 {
     .mail-sender
     {
-        margin: 0px;
+        margin: 5px;
         flex-direction: column;
     }
 

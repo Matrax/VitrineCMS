@@ -81,4 +81,9 @@
 {
     .facebook-carrousel-content { flex-direction: column; }
     .facebook-carrousel-panel { flex-direction: column; }
+
+    .facebook-carrousel
+    {
+        margin: 5px;
+    }
 }

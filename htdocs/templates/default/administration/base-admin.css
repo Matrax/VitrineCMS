@@ -13,10 +13,25 @@ body
     background-color: rgb(0, 0, 50);
 }
 
+.add-button
+{
+    margin: 40px;
+    width: 200px;
+    background-color: orange;
+}
+
 @media (max-width: 900px)
 {
     body 
     {
         padding: 5px;
+    }
+
+    .add-button
+    {
+        margin: 20px;
+        width: 200px;
+        justify-self: center;
+        background-color: orange;
     }
 }

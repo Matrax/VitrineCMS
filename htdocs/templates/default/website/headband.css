@@ -41,7 +41,7 @@
     100% {opacity:1;}
 }
 
-@media(max-width: 900px)
+@media(max-width: 1200px)
 {
     .headband
     {
@@ -52,7 +52,7 @@
 
     .headband-container
     {
-        margin: 0px;
+        margin: 5px;
         margin-top: 20px;
         padding: 0px;
         flex-direction: column;

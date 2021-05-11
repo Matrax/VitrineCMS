@@ -17,6 +17,12 @@
 
 @media(max-width: 900px)
 {
+
+    .gallery
+    {
+        margin: 5px;
+    }
+
     .gallery-image
     {
         width: 100%;
