@@ -74,6 +74,16 @@ function addImageEvent()
     });
 }
 
+function deleteImageEvent()
+{
+    var button = document.getElementsByClassName("delete-image-button")[0];
+    button.addEventListener("click", function()
+    {
+        var image = this.attributes["image"].value;
+        window.location.href = "scripts/delete_image.php?image=" + image;
+    });
+}
+
 function openModalEvent()
 {
     var buttons = document.getElementsByTagName("button");
@@ -138,6 +148,7 @@ window.addEventListener("load", function()
     openModalEvent();
     exitModalEvent();
     addImageEvent();
+    deleteImageEvent();
     containerModalEvent();
     imageModalEvent();
     urlModalEvent();

@@ -4,6 +4,12 @@
         "title": "Titre du site"
     },
     "1": {
+        "type": "paragraph",
+        "title": "Title",
+        "text": "Text",
+        "image": "content\/none.png"
+    },
+    "2": {
         "type": "navbar",
         "elements": {
             "0": {
