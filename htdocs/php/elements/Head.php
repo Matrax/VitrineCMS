@@ -113,4 +113,19 @@ class Head extends HTMLContent
         return $this->title;
     }
 
+    public function getCharset() : string
+    {
+        return $this->charset;
+    }
+
+    public function getAuthor() : string
+    {
+        return $this->author;
+    }
+
+    public function getLanguage() : string
+    {
+        return $this->language;
+    }
+
 }
