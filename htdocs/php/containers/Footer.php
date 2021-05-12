@@ -119,6 +119,12 @@ class Footer extends HTMLContent
         return $this->html;
     }
     
+    /**
+     * Cette méthode ajoute une image au bas de page.
+     * @param string $image L'image à ajouter au bas de page.
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
     public function addImage(string $image)
     {
         array_push($this->images, $image);
