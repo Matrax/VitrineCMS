@@ -120,7 +120,6 @@ class FacebookCarrousel extends HTMLContent
     public function onCreateAdminHtml() : string
     {
         $count = 0;
-        $id = $this->app_id;
         $url = file_get_contents("https://graph.facebook.com/v10.0/".$this->page_id."/feed?access_token=".$this->token."&limit=5");
         if($url != false) $feed = json_decode($url, true);
 
@@ -180,6 +179,19 @@ class FacebookCarrousel extends HTMLContent
         $this->appendHtml("</div>");
         $this->appendHtml("</div>");
         $this->appendHtml("<script src=\"js/administration/facebook-token.js\"></script>");
+        $this->generateScript();
+        $this->appendHtml("<script async defer crossorigin=\"anonymous\" src=\"https://connect.facebook.net/fr_FR/sdk.js\"></script>");
+        return $this->html;
+    }
+
+    /**
+     * Cette méthode génère le script d'initialisation de l'api Facebook
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
+    public function generateScript()
+    {
+        $id = $this->id;
         $this->appendHtml(<<<HTML
             <script>
                 window.fbAsyncInit = function() 
@@ -194,25 +206,47 @@ class FacebookCarrousel extends HTMLContent
                 generateTokenButtonEvent();
             </script>
         HTML);
-        $this->appendHtml("<script async defer crossorigin=\"anonymous\" src=\"https://connect.facebook.net/fr_FR/sdk.js\"></script>");
-        return $this->html;
     }
 
+    /**
+     * Cette méthode affecte le token d'accés page.
+     * @param string $token Le nouveau token d'accés page.
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
     public function setToken(string $token)
     {
         $this->token = $token;
     }
 
+    /**
+     * Cette méthode affecte l'ID de la page facebook.
+     * @param string $page_id L'ID de la page facebook.
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
     public function setPageID(string $page_id)
     {
         $this->page_id = $page_id;
     }
 
+    /**
+     * Cette méthode affecte l'ID de l'application.
+     * @param string $app_id L'ID de l'application.
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
     public function setAppID(string $app_id)
     {
         $this->app_id = $app_id;
     }
 
+    /**
+     * Cette méthode affecte la clé de l'application.
+     * @param string $app_key La clé de l'application. 
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
     public function setAppKey(string $app_key)
     {
         $this->app_key = $app_key;
