@@ -156,17 +156,36 @@ class MailSender extends HTMLContent
         return $this->html; 
     }
 
+    /**
+     * Cette méthode ajoute un contact.
+     * @param string $name Le nom du contact
+     * @param string $mail L'email du contact
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
     public function addContact(string $name, string $mail)
     {
         array_push($this->contacts, $name.":".$mail);
     }
 
+    /**
+     * Cette méthode affecte l'image de l'envoyeur de mail
+     * @param string $image L'image à affecter
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
     public function setImage(string $image)
     {
         $this->image = $image;
     }
 
-    public function getContacts()
+    /**
+     * Cette méthode renvoie la liste des contacts
+     * @return array La liste des contacts
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
+    public function getContacts() : array
     {
         return $this->contacts;
     }

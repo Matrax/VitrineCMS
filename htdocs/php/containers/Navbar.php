@@ -100,7 +100,6 @@ class Navbar extends HTMLContent
     /**
      * Cette méthode abstraite permet de crée le contenu html administrateur du conteneur.
      * @return string Le contenu html administrateur du conteneur.
-     * @brief Cette méthode abstraite permet de crée le contenu html administrateur du conteneur.
      * @author Alexandre Pierret
      * @version 1.0
      */

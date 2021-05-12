@@ -216,6 +216,13 @@ class GoogleMap extends HTMLContent
         $this->lng = $lng;
     }
 
+    /**
+     * Cette méthode ajoute une location à la map
+     * @param string $lat La latitude à ajouter
+     * @param string $lng La longitude à ajouter.
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
     public function addLocation(string $lat, string $lng)
     {
         array_push($this->locations, $lat.":".$lng);
