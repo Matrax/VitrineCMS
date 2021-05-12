@@ -13,6 +13,8 @@ declare(strict_types = 1);
 class FacebookCarrousel extends HTMLContent
 {
 
+    private string $app_id;
+    private string $app_key;
     private string $page_id;
     private string $token;
 
@@ -39,6 +41,8 @@ class FacebookCarrousel extends HTMLContent
         $carrousel = new FacebookCarrousel();
         $carrousel->setToken($data["token"]);
         $carrousel->setPageID($data["page_id"]);
+        $carrousel->setAppID($data["app_id"]);
+        $carrousel->setAppKey($data["app_key"]);
         return $carrousel;
     }
 
@@ -55,6 +59,8 @@ class FacebookCarrousel extends HTMLContent
         $data["type"] = "facebook-carrousel";
         $data["token"] = "";
         $data["page_id"] = "";
+        $data["app_id"] = "";
+        $data["app_key"] = "";
         return $data;
     }
 
@@ -113,12 +119,14 @@ class FacebookCarrousel extends HTMLContent
      */
     public function onCreateAdminHtml() : string
     {
-        $this->appendHtml("<div class=\"element-container\">");
-        $this->appendHtml("<div class=\"element\" id=\"".$this->id."\">");
         $count = 0;
-        $this->appendHtml("<div class=\"facebook-carrousel\">");
+        $id = $this->app_id;
         $url = file_get_contents("https://graph.facebook.com/v10.0/".$this->page_id."/feed?access_token=".$this->token."&limit=5");
         if($url != false) $feed = json_decode($url, true);
+
+        $this->appendHtml("<div class=\"element-container\">");
+        $this->appendHtml("<div class=\"element\" id=\"".$this->id."\">");
+        $this->appendHtml("<div class=\"facebook-carrousel\">");
         $this->appendHtml("<div class=\"facebook-carrousel-panel\">");
         $this->appendHtml("<img class=\"facebook-carrousel-logo\" src=\"content/facebook.png\" width=100% height=100%>");
         $this->appendHtml("<div class=\"facebook-carrousel-container\">");
@@ -153,9 +161,12 @@ class FacebookCarrousel extends HTMLContent
         $this->appendHtml("</div>");
         $this->appendHtml("</div>");
         $this->appendHtml("<div class=\"element-title\">ID et token</div>");
-        $this->appendHtml("<div class=\"element-manager-2\">");
+        $this->appendHtml("<div class=\"element-manager-3\">");
         $this->appendHtml("<input role=\"admin\" target=\"page_id\" id=\"".$this->id."\" value=\"".$this->page_id."\" placeholder=\"ID de la page\">");
-        $this->appendHtml("<input role=\"admin\" target=\"token\" id=\"".$this->id."\" value=\"".$this->token."\" placeholder=\"Token page\">");
+        $this->appendHtml("<input role=\"admin\" target=\"app_id\" id=\"".$this->id."\" value=\"".$this->app_id."\" placeholder=\"ID Application\">");
+        $this->appendHtml("<input role=\"admin\" target=\"app_key\" id=\"".$this->id."\" value=\"".$this->app_key."\" placeholder=\"Clé Application\">");
+        $this->appendHtml("<input role=\"admin\" target=\"token\" id=\"".$this->id."\" value=\"".$this->token."\" placeholder=\"Token d'accés\" disabled>");
+        $this->appendHtml("<button class=\"element-facebook-token\" role=\"admin\" target=\"token\" id=\"".$this->id."\" value=\"".$this->token."\">Regénérer le token</button>");
         $this->appendHtml("</div>");
         $this->appendHtml("<div class=\"element-title\">Options</div>");
         $this->appendHtml("<div class=\"elements-options\">");
@@ -168,7 +179,23 @@ class FacebookCarrousel extends HTMLContent
         $this->appendHtml("</svg>");
         $this->appendHtml("</div>");
         $this->appendHtml("</div>");
-        return $this->html; 
+        $this->appendHtml("<script src=\"js/administration/facebook-token.js\"></script>");
+        $this->appendHtml(<<<HTML
+            <script>
+                window.fbAsyncInit = function() 
+                {
+                    FB.init({
+                        appId            : $id,
+                        autoLogAppEvents : true,
+                        xfbml            : true,
+                        version          : 'v10.0'
+                    });
+                }
+                generateTokenButtonEvent();
+            </script>
+        HTML);
+        $this->appendHtml("<script async defer crossorigin=\"anonymous\" src=\"https://connect.facebook.net/fr_FR/sdk.js\"></script>");
+        return $this->html;
     }
 
     public function setToken(string $token)
@@ -179,6 +206,16 @@ class FacebookCarrousel extends HTMLContent
     public function setPageID(string $page_id)
     {
         $this->page_id = $page_id;
+    }
+
+    public function setAppID(string $app_id)
+    {
+        $this->app_id = $app_id;
+    }
+
+    public function setAppKey(string $app_key)
+    {
+        $this->app_key = $app_key;
     }
 
 }

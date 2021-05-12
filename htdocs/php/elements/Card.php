@@ -73,45 +73,21 @@ class Card extends HTMLContent
         return $this->html;
     }
 
-    /**
-     * Cette méthode affecte l'image de la carte.
-     * @param string $image L'image à affecter.
-     * @author Alexandre Pierret
-     * @version 1.0
-     */
     public function setImage(string $image)
     {
         $this->image = $image;
     }
 
-    /**
-     * Cette méthode affecte le texte en dessous de la carte.
-     * @param string $image Le texte à mettre.
-     * @author Alexandre Pierret
-     * @version 1.0
-     */
     public function setText(string $text)
     {
         $this->text = $text;
     }
 
-    /**
-     * Cette méthode renvoie l'image de la carte.
-     * @return string L'image de la carte
-     * @author Alexandre Pierret
-     * @version 1.0
-     */
     public function getImage() : string
     {
         return $this->image;
     }
 
-    /**
-     * Cette méthode renvoie le texte de la carte.
-     * @return string Le texte de la carte
-     * @author Alexandre Pierret
-     * @version 1.0
-     */
     public function getText() : string
     {
         return $this->text;
