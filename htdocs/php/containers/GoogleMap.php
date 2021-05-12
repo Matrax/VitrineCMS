@@ -172,21 +172,45 @@ class GoogleMap extends HTMLContent
         return $this->html;
     }
 
+    /**
+     * Cette méthode affecte la clé de l'api google map
+     * @param string $key La clé google map
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
     public function setKey(string $key)
     {
         $this->key = $key;
     }
 
+    /**
+     * Cette méthode affecte le zoom de la carte google map
+     * @param int $zoom Le zoom de la carte.
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
     public function setZoom(int $zoom)
     {
         $this->zoom = $zoom;
     }
 
+    /**
+     * Cette méthode affecte la latitude de la vue.
+     * @param float $lat La latitude de la vue.
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
     public function setLat(float $lat)
     {
         $this->lat = $lat;
     }
 
+    /**
+     * Cette méthode affecte la longitude de la vue.
+     * @param float $lng La longitude de la vue.
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
     public function setLng(float $lng)
     {
         $this->lng = $lng;

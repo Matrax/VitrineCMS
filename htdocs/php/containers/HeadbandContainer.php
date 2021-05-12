@@ -132,6 +132,12 @@ class HeadbandContainer extends HTMLContent
         return $this->html;
     }
 
+    /**
+     * Cette méthode ajoute un bandeau au conteneur
+     * @param Headband $headband Le bandeau à ajouter
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
     public function addHeadband(Headband $headband)
     {
         array_push($this->headbands, $headband);
