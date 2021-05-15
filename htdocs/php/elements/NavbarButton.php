@@ -53,7 +53,9 @@ class NavbarButton extends HTMLContent
      */
     public function onCreateHtml() : string
     {
-        $this->appendHtml("<div class=\"navbar-button\" url=\"".$this->url."\">".$this->text."</div>");
+        $this->appendHtml(<<<HTML
+            <div class="navbar-button" url="{$this->url}">{$this->text}</div>
+        HTML);
         return $this->html;
     }
 
@@ -66,7 +68,9 @@ class NavbarButton extends HTMLContent
      */
     public function onCreateAdminHtml() : string
     {
-        $this->appendHtml("<div class=\"navbar-button\" url=\"".$this->url."\">".$this->text."</div>");
+        $this->appendHtml(<<<HTML
+            <div class="navbar-button" url="{$this->url}">{$this->text}</div>
+        HTML);
         return $this->html;
     }
 

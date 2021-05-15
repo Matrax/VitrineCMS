@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dispatcher_187',['Dispatcher',['../classDispatcher.html',1,'']]]
+  ['frontcontroller_111',['FrontController',['../classFrontController.html',1,'']]]
 ];

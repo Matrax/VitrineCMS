@@ -44,17 +44,25 @@ class Head extends HTMLContent
      */
     public function onCreateHtml() : string
     {
-        $this->appendHtml("<meta charset=\"".$this->charset."\">");
-        $this->appendHtml("<meta name=\"keywords\" content=\"".$this->keywords."\">");
-        $this->appendHtml("<meta name=\"author\" content=\"".$this->author."\">");
-        $this->appendHtml("<meta name=\"description\" content=\"".Configuration::getConfiguration("description")."\">");
-        $this->appendHtml("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
-        $this->appendHtml("<meta http-equiv=\"Cache-control\" content=\"public\">");
-        $this->appendHtml("<title>".$this->title."</title>");
+        $description = Configuration::getConfiguration("description");
+
+        $this->appendHtml(<<<HTML
+            <meta charset="{$this->charset}">
+            <meta name="keywords" content="{$this->keywords}">
+            <meta name="author" content="{$this->author}">
+            <meta name="description" content="{$description}">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="Cache-control" content="public">
+            <title>{$this->title}</title>
+        HTML);
+
         for($i = 0; $i < sizeof($this->styles); $i++)
         {
-            $this->appendHtml("<link rel=\"stylesheet\" href=\"".$this->styles[$i]."\">");
+            $this->appendHtml(<<<HTML
+                <link rel="stylesheet" href="{$this->styles[$i]}">\n
+            HTML);
         }
+
         return $this->html;
     }
 
@@ -67,15 +75,25 @@ class Head extends HTMLContent
      */
     public function onCreateAdminHtml() : string
     {
-        $this->appendHtml("<meta charset=\"".$this->charset."\">");
-        $this->appendHtml("<meta name=\"keywords\" content=\"".$this->keywords."\">");
-        $this->appendHtml("<meta name=\"author\" content=\"".$this->author."\">");
-        $this->appendHtml("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
-        $this->appendHtml("<title>".$this->title." Administration</title>");
+        $description = Configuration::getConfiguration("description");
+
+        $this->appendHtml(<<<HTML
+            <meta charset="{$this->charset}">
+            <meta name="keywords" content="{$this->keywords}">
+            <meta name="author" content="{$this->author}">
+            <meta name="description" content="{$description}">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="Cache-control" content="public">
+            <title>{$this->title}</title>
+        HTML);
+
         for($i = 0; $i < sizeof($this->styles); $i++)
         {
-            $this->appendHtml("<link rel=\"stylesheet\" href=\"".$this->styles[$i]."\">");
+            $this->appendHtml(<<<HTML
+                <link rel="stylesheet" href="{$this->styles[$i]}">\n
+            HTML);
         }
+
         return $this->html;
     }
 
@@ -111,6 +129,21 @@ class Head extends HTMLContent
     public function getTitle() : string
     {
         return $this->title;
+    }
+
+    public function getCharset() : string
+    {
+        return $this->charset;
+    }
+
+    public function getAuthor() : string
+    {
+        return $this->author;
+    }
+
+    public function getLanguage() : string
+    {
+        return $this->language;
     }
 
 }

@@ -51,10 +51,12 @@ class Card extends HTMLContent
      */
     public function onCreateHtml() : string
     {
-        $this->appendHtml("<div class=\"card\">");
-        $this->appendHtml("<img class=\"card-image\" src=\"".$this->image."\" alt=\"image\">");
-        $this->appendHtml("<div class=\"card-text\">".$this->text."</div>");
-        $this->appendHtml("</div>");
+        $this->appendHtml(<<<HTML
+            <div class="card">
+            <img class="card-image" src="{$this->image}" alt="image" width=100% height=100%>
+            <div class="card-text">{$this->text}</div>
+            </div>
+        HTML);
         return $this->html;
     }
 
@@ -66,28 +68,54 @@ class Card extends HTMLContent
      */
     public function onCreateAdminHtml() : string
     {
-        $this->appendHtml("<div class=\"card\">");
-        $this->appendHtml("<img class=\"card-image\" src=\"".$this->image."\" alt=\"image\" width=100% height=100%>");
-        $this->appendHtml("<div class=\"card-text\">".$this->text."</div>");
-        $this->appendHtml("</div>");
+        $this->appendHtml(<<<HTML
+            <div class="card">
+            <img class="card-image" src="{$this->image}" alt="image" width=100% height=100%>
+            <div class="card-text">{$this->text}</div>
+            </div>
+        HTML);
         return $this->html;
     }
 
+    /**
+     * Cette méthode affecte l'image de la carte.
+     * @param string $image L'image à affecter.
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
     public function setImage(string $image)
     {
         $this->image = $image;
     }
 
+    /**
+     * Cette méthode affecte le texte en dessous de la carte.
+     * @param string $image Le texte à mettre.
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
     public function setText(string $text)
     {
         $this->text = $text;
     }
 
+    /**
+     * Cette méthode renvoie l'image de la carte.
+     * @return string L'image de la carte
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
     public function getImage() : string
     {
         return $this->image;
     }
 
+    /**
+     * Cette méthode renvoie le texte de la carte.
+     * @return string Le texte de la carte
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
     public function getText() : string
     {
         return $this->text;

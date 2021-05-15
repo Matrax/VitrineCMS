@@ -37,11 +37,15 @@ class Body extends HTMLContent
     {
         for($i = 0; $i < sizeof($this->modules); $i++)
         {
-            $this->appendHtml("<script src=\"".$this->modules[$i]."\" type=\"module\"></script>");
+            $this->appendHtml(<<<HTML
+                <script src="{$this->modules[$i]}" type="module"></script>\n
+            HTML);
         }
         for($i = 0; $i < sizeof($this->scripts); $i++)
         {
-            $this->appendHtml("<script src=\"".$this->scripts[$i]."\"></script>");
+            $this->appendHtml(<<<HTML
+                <script src="{$this->scripts[$i]}"></script>\n
+            HTML);
         }
         return $this->html;
     }
@@ -56,11 +60,15 @@ class Body extends HTMLContent
     {
         for($i = 0; $i < sizeof($this->modules); $i++)
         {
-            $this->appendHtml("<script src=\"".$this->modules[$i]."\" type=\"module\"></script>");
+            $this->appendHtml(<<<HTML
+                <script src="{$this->modules[$i]}" type="module"></script>\n
+            HTML);
         }
         for($i = 0; $i < sizeof($this->scripts); $i++)
         {
-            $this->appendHtml("<script src=\"".$this->scripts[$i]."\"></script>");
+            $this->appendHtml(<<<HTML
+                <script src="{$this->scripts[$i]}"></script>\n
+            HTML);
         }
         return $this->html;
     }

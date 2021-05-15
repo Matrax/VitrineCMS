@@ -33,119 +33,175 @@ class AdminView extends View
      */
     public function render()
     {
-        $this->getBody()->appendHtml("<button class=\"add-button\" target=\"container\" target-id=\"1\">Ajouter un élement</button>");
+        $area = FrontController::getInstance()->getArea();
+
+        $this->getBody()->appendHtml(<<<HTML
+            <button class="add-button" target="container" target-id="1">Ajouter un élement</button>
+        HTML);
+
         for($i = 0; $i < sizeof($this->getContents()); $i++)
         {
-            $this->getBody()->appendHtml($this->getContents()[$i]->getAdminHtml());
-            $this->getBody()->appendHtml("<button class=\"add-button\" target=\"container\" target-id=\"".($i + 2)."\">Ajouter un élement</button>");
+            $index = $i + 2;
+            $this->getBody()->appendHtml(<<<HTML
+                {$this->getContents()[$i]->getAdminHtml()}
+                <button class="add-button" target="container" target-id="{$index}">Ajouter un élement</button>
+            HTML);
         }
-        $html = "<!doctype html>";
-        $html .= "<html lang=\"fr\">";
-        $html .= "<head>";
-        $html .= $this->getHead()->getAdminHtml();
-        $html .= "</head>";
-        $html .= "<body>";
-        $html .= $this->getNavbar();
-        $html .= "<div class=\"element-container\">";
-        $html .= "<div class=\"element-title\">Titre de la page</div>";
-        $html .= "<div class=\"element-manager-2\">";
-        $html .= "<input role=\"admin\" type=\"head\" id=\"0\" target=\"title\" value=\"".$this->getHead()->getTitle()."\">";
-        $html .= "</div>";
-        $html .= "</div>";
-        $html .= $this->getBody()->getAdminHtml();
-        $html .= $this->getImageModal();
-        $html .= $this->getUrlModal();
-        $html .= $this->getContainerModal();
-        $html .= "<div id=\"json\" url=\"webpage/".FrontController::getInstance()->getArea().".json\" hidden>";
-        $html .= $this->getFile();
-        $html .= "</div>";
-        $html .= "</body></html>";
-        echo($html);
+
+        echo(<<<HTML
+            <!doctype html>
+            <html lang="fr">
+            <head>
+            {$this->getHead()->getAdminHtml()}
+            </head>
+            <body>
+            {$this->getNavbar()}
+            <div class="element-container">
+            <div class="element-title">Titre de la page</div>
+            <div class="element-manager-2">
+            <input role="admin" type="head" id="0" target="title" value="{$this->getHead()->getTitle()}">
+            </div>
+            </div>
+            {$this->getBody()->getAdminHtml()}
+            {$this->getImageModal()}
+            {$this->getUrlModal()}
+            {$this->getContainerModal()}
+            <div id="json" url="webpage/{$area}.json" hidden>
+            {$this->getFile()}
+            </div>
+            </body>
+            </html>
+        HTML);
     }
 
     private function getNavbar() : string
     {
         $pages = FrontController::getInstance()->getPages();
-        $html = "<div class=\"navbar-administration\">";
-        $html .= "<div class=\"navbar-line\">";
+
+        $html = <<<HTML
+            <div class="navbar-administration">
+            <div class="navbar-line">\n
+        HTML;
+
         for($i = 0; $i < sizeof($pages); $i++)
         {
-            $html .= "<div class=\"navbar-button-administration bg-white\">".$pages[$i]."</div>";
+            $html .= <<<HTML
+                <div class="navbar-button-administration bg-white">{$pages[$i]}</div>
+            HTML;
         }
-        $html .= "</div>";
-        $html .= "<div class=\"navbar-line\">";
-        $html .= "<div class=\"navbar-button-save-administration\" id=\"button-save\">Sauvegarder la page</div>";
+
+        $html .= <<<HTML
+            </div>
+            <div class="navbar-line">
+            <div class="navbar-button-save-administration" id="button-save">Sauvegarder la page</div>
+        HTML;
+
         if(isset($_GET["area"]) && $_GET["area"] != "index")
         {
-            $html .= "<div class=\"navbar-button-delete-administration\" id=\"button-delete\">Supprimer cette page</div>";
+            $html .= <<<HTML
+                <div class="navbar-button-delete-administration" id="button-delete">Supprimer cette page</div>
+            HTML;
         }
-        $html .= "<div class=\"navbar-button-quit-administration\" id=\"button-home\">Retour au site</div>";
-        $html .= "<div class=\"navbar-button-disconnect-administration\" id=\"button-disconnect\">Déconnexion</div>";
-        $html .= "<div class=\"navbar-button-create-administration\" id=\"button-create\">Créer une page</div>";
-        $html .= "<input class=\"navbar-create-input\" type=\"text\" placeholder=\"Nom de la nouvelle page\">";
-        $html .= "</div>";
-        $html .= "</div>";
+
+        $html .= <<<HTML
+            <div class="navbar-button-quit-administration" id="button-home">Retour au site</div>
+            <div class="navbar-button-disconnect-administration" id="button-disconnect">Déconnexion</div>
+            <div class="navbar-button-create-administration" id="button-create">Créer une page</div>
+            <input class="navbar-create-input" type="text" placeholder="Nom de la nouvelle page">
+            </div>
+            </div>
+        HTML;
+
         return $html;
     }
 
     private function getImageModal() : string
     {
-        $html = "<div class=\"modal-admin\" id=\"modal-image-admin\">";
-        $html .= "<div class=\"modal-content\">";
-        $html .= "<div class=\"modal-image-content\">";
+        $html = <<<HTML
+            <div class="modal-admin" id="modal-image-admin">
+            <div class="modal-content">
+            <div class="modal-image-content">
+        HTML;
+
         foreach (array_diff(scandir("content/images"), [".", ".."]) as $key => $value) 
         {
-            $html .= "<div class=\"modal-container-content\">";
-            $html .= "<img class=\"modal-image\" src=\"content/images/".$value."\" width=100px height=100px>";
-            $html .= "<div class=\"delete-image-button\" image=\"".$value."\">Supprimer</div>";
-            $html .= "</div>";
+            $html .= <<<HTML
+            <div class="modal-container-content">
+            <img class="modal-image" src="content/images/{$value}" width=100px height=100px>
+            <div class="delete-image-button" image="{$value}">Supprimer</div>
+            </div>
+            HTML;
         }
-        $html .= "</div>";
-        $html .= "<div class=\"modal-button-content\">";
-        $html .= "<input class=\"modal-add-button\" type=\"file\">";
-        $html .= "<div class=\"modal-close-button\">Retour</div>";
-        $html .= "</div>";
-        $html .= "</div>";
-        $html .= "</div>";
+
+        $html .= <<<HTML
+            </div>
+            <div class="modal-button-content">
+            <input class="modal-add-button" type="file">
+            <div class="modal-close-button">Retour</div>
+            </div>
+            </div>
+            </div>
+        HTML;
+
         return $html;
     }
 
     private function getUrlModal() : string
     {
         $pages = FrontController::getInstance()->getPages();
-        $html = "<div class=\"modal-admin\" id=\"modal-url-admin\">";
-        $html .= "<div class=\"modal-content\">";
-        $html .= "<div class=\"modal-url-content\">";
+
+        $html = <<<HTML
+            <div class="modal-admin" id="modal-url-admin">
+            <div class="modal-content">
+            <div class="modal-url-content">
+        HTML;
+
         for($i = 0; $i < sizeof($pages); $i++)
         {
-            $html .= "<div class=\"modal-url\" value=\"".$pages[$i]."\">".$pages[$i]."</div>";
+            $html .= <<<HTML
+                <div class="modal-url" value="{$pages[$i]}">{$pages[$i]}</div>
+            HTML;
         }
-        $html .= "</div>";
-        $html .= "<div class=\"modal-button-content\">";
-        $html .= "<div class=\"modal-close-button\">Retour</div>";
-        $html .= "</div>";
-        $html .= "</div>";
-        $html .= "</div>";
+
+        $html .= <<<HTML
+            </div>
+            <div class="modal-button-content">
+            <div class="modal-close-button">Retour</div>
+            </div>
+            </div>
+            </div>
+        HTML;
+
         return $html;
     }
 
     private function getContainerModal() : string
     {
         $containers = ClassUtils::getAllContainerClasses();
-        $html = "<div class=\"modal-admin\" id=\"modal-container-admin\">";
-        $html .= "<div class=\"modal-content\">";
-        $html .= "<div class=\"modal-container-content\">";
+
+        $html = <<<HTML
+            <div class="modal-admin" id="modal-container-admin">
+            <div class="modal-content">
+            <div class="modal-container-content">
+        HTML;
+
         foreach ($containers as $key => $value) 
         {
             $name = ClassUtils::getContainerName($value);
-            $html .= "<div class=\"modal-container\" value=\"".$value."\">".$name."</div>";
+            $html .= <<<HTML
+                <div class="modal-container" value={$value}>{$name}</div>
+            HTML;
         }
-        $html .= "</div>";
-        $html .= "<div class=\"modal-button-content\">";
-        $html .= "<div class=\"modal-close-button\">Retour</div>";
-        $html .= "</div>";
-        $html .= "</div>";
-        $html .= "</div>";
+
+        $html .= <<<HTML
+            </div>
+            <div class="modal-button-content">
+            <div class="modal-close-button">Retour</div>
+            </div>
+            </div>
+            </div>
+        HTML;
+
         return $html;
     }
 

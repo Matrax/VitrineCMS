@@ -28,7 +28,6 @@ class FrontController
     private Dispatcher $dispatcher;
     private ?View $view;
 
-
     /**
      * Constructeur de la classe FrontController.
      * Cette classe est un singleton, impossible donc de l'instancier plusieurs fois.
@@ -76,7 +75,7 @@ class FrontController
         }
         return $list;
     }
-    
+
     /**
      * Cette méthode permet le rendu de la vue à l'utilisateur.
      * Cette méthode appelle le dispatcher pour choisir la bonne vue
@@ -89,7 +88,7 @@ class FrontController
         $this->view = $this->dispatcher->dispatch();
         $this->view->render();
     }
-
+    
     /**
      * Cette méthode renvoie le role de l'utilisateur.
      * @return string Le role de l'utilisateur.

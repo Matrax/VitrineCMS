@@ -83,71 +83,104 @@ class Navbar extends HTMLContent
      */
     public function onCreateHtml() : string
     {
-        //Navbar
-        $this->appendHtml("<nav class=\"navbar\">");
+        $this->appendHtml(<<<HTML
+            <nav class="navbar">
+        HTML);
+
         for($i = 0; $i < sizeof($this->navbarButtons); $i++)
         {
-            $this->appendHtml($this->navbarButtons[$i]->getHtml());
+            $this->appendHtml(<<<HTML
+                {$this->navbarButtons[$i]->getHtml()}
+            HTML);
         }
+
         for($i = 0; $i < sizeof($this->navbarItems); $i++)
         {
-            $this->appendHtml($this->navbarItems[$i]->getHtml());
+            $this->appendHtml(<<<HTML
+                {$this->navbarItems[$i]->getHtml()}
+            HTML);
         }
-        $this->appendHtml("</nav>");
+
+        $this->appendHtml(<<<HTML
+            </nav>
+        HTML);
+
         return $this->html;
     }
 
     /**
      * Cette méthode abstraite permet de crée le contenu html administrateur du conteneur.
      * @return string Le contenu html administrateur du conteneur.
+     * @brief Cette méthode abstraite permet de crée le contenu html administrateur du conteneur.
      * @author Alexandre Pierret
      * @version 1.0
      */
     public function onCreateAdminHtml() : string
     {
-        $this->appendHtml("<div class=\"element-container\">");
-        $this->appendHtml("<div class=\"element\" id=\"".$this->id."\">");
-        $this->appendHtml("<nav class=\"navbar\">");
+        $this->appendHtml(<<<HTML
+            <div class="element-container">
+            <div class="element" id="{$this->id}">
+            <nav class="navbar">
+        HTML);
+
         for($i = 0; $i < sizeof($this->navbarButtons); $i++)
         {
-            $this->appendHtml($this->navbarButtons[$i]->getAdminHtml());
+            $this->appendHtml(<<<HTML
+                {$this->navbarButtons[$i]->getAdminHtml()}
+            HTML);
         }
+
         for($i = 0; $i < sizeof($this->navbarItems); $i++)
         {
-            $this->appendHtml($this->navbarItems[$i]->getAdminHtml());
+            $this->appendHtml(<<<HTML
+                {$this->navbarItems[$i]->getAdminHtml()}
+            HTML);
         }
-        $this->appendHtml("</nav>");
-        $this->appendHtml("</div>");
-        $this->appendHtml("<div class=\"element-title\">Boutons</div>");
-        $this->appendHtml("<div class=\"element-manager-3\">");
+
+        $this->appendHtml(<<<HTML
+            </nav>
+            </div>
+            <div class="element-title">Boutons</div>
+            <div class="element-manager-3">
+        HTML);
+
         foreach ($this->navbarButtons as $key => $value) 
         {
-            $this->appendHtml("<input role=\"admin\" target=\"text\" container-id=\"".$this->id."\" id=\"".$value->id."\" value=\"".$value->getText()."\">");
-            $this->appendHtml("<button role=\"admin\" target=\"url\" container-id=\"".$this->id."\" id=\"".$value->id."\" value=\"".$value->getUrl()."\">".$value->getUrl()."</button>");
-            $this->appendHtml("<div class=\"subelement-delete-button\" container-id=\"".$this->id."\" id=\"".$value->id."\">Supprimer le bouton</div>");
+            $this->appendHtml(<<<HTML
+                <input role="admin" target="text" container-id="{$this->id}" id="{$value->id}" value="{$value->getText()}">
+                <button role="admin" target="url" container-id="{$this->id}" id="{$value->id}" value="{$value->getUrl()}">{$value->getUrl()}</button>
+                <div class="subelement-delete-button" container-id="{$this->id}" id="{$value->id}">Supprimer le bouton</div>
+                </div>
+                <div class="element-title">Items</div>
+                <div class="element-manager-3">
+            HTML);
         }
-        $this->appendHtml("</div>");
-        $this->appendHtml("<div class=\"element-title\">Items</div>");
-        $this->appendHtml("<div class=\"element-manager-3\">");
+
         foreach ($this->navbarItems as $key => $value) 
         {
-            $this->appendHtml("<input role=\"admin\" target=\"text\" container-id=\"".$this->id."\" id=\"".$value->id."\" value=\"".$value->getText()."\">");
-            $this->appendHtml("<div class=\"subelement-delete-button\" container-id=\"".$this->id."\" id=\"".$value->id."\">Supprimer l'item</div>");
+            $this->appendHtml(<<<HTML
+                <input role="admin" target="text" container-id="{$this->id}" id="{$value->id}" value="{$value->getText()}">
+                <div class="subelement-delete-button" container-id="{$this->id}" id="{$value->id}">Supprimer l'item</div>
+            HTML);
         }
-        $this->appendHtml("</div>");
-        $this->appendHtml("<div class=\"element-title\">Options</div>");
-        $this->appendHtml("<div class=\"elements-options\">");
-        $this->appendHtml("<div class=\"subelement-create-button\" target=\"navbar-item\" container-id=\"".$this->id."\">Ajouter un item</div>");
-        $this->appendHtml("<div class=\"subelement-create-button\" target=\"navbar-button\" container-id=\"".$this->id."\">Ajouter un bouton</div>");
-        $this->appendHtml("<div class=\"element-delete-button\" container-id=\"".$this->id."\">Supprimer</div>");
-        $this->appendHtml("<svg class=\"element-swap-button\" id=\"".$this->id."\" action=\"up\" xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" viewBox=\"0 0 16 16\">");
-        $this->appendHtml("<path fill-rule=\"evenodd\" d=\"M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z\"/>");
-        $this->appendHtml("</svg>");
-        $this->appendHtml("<svg class=\"element-swap-button\" id=\"".$this->id."\" action=\"down\" xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" viewBox=\"0 0 16 16\">");
-        $this->appendHtml("<path fill-rule=\"evenodd\" d=\"M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z\"/>");
-        $this->appendHtml("</svg>");
-        $this->appendHtml("</div>");
-        $this->appendHtml("</div>");
+
+        $this->appendHtml(<<<HTML
+            </div>
+            <div class="element-title">Options</div>
+            <div class="elements-options">
+            <div class="subelement-create-button" target="navbar-item" container-id="{$this->id}">Ajouter un item</div>
+            <div class="subelement-create-button" target="navbar-button" container-id="{$this->id}">Ajouter un bouton</div>
+            <div class="element-delete-button" id="{$this->id}">Supprimer</div>
+            <svg class="element-swap-button" id="{$this->id}" action="up" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+            <svg class="element-swap-button" id="{$this->id}" action="down" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
+            </svg>
+            </div>
+            </div>
+        HTML);
+
         return $this->html;
     }
 

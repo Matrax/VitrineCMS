@@ -4,6 +4,7 @@ declare(strict_types = 1);
 
 /**
  * Classe représentant un bandeau.
+ * Le bandeau est cliquable pour aller vers un lien.
  * @type headband
  * @brief Classe représentant un bandeau.
  * @author Alexandre Pierret
@@ -56,10 +57,12 @@ class Headband extends HTMLContent
      */
     public function onCreateHtml() : string
     {
-        $this->appendHtml("<div class=\"headband\" url=\"".$this->url."\">");
-        $this->appendHtml("<img class=\"headband-image\" src=\"".$this->image."\" alt=\"image\">");
-        $this->appendHtml("<div class=\"headband-text\">".$this->text."</div>");
-        $this->appendHtml("</div>");
+        $this->appendHtml(<<<HTML
+            <div class="headband" url="{$this->url}">
+            <img class="headband-image" src="{$this->image}" alt="image" width=100% height=100%>
+            <div class="headband-text">{$this->text}</div>
+            </div>
+        HTML);
         return $this->html;
     }
 
@@ -72,10 +75,12 @@ class Headband extends HTMLContent
      */
     public function onCreateAdminHtml() : string
     {
-        $this->appendHtml("<div class=\"headband\" url=\"".$this->url."\">");
-        $this->appendHtml("<img class=\"headband-image\" src=\"".$this->image."\" alt=\"image\" width=100% height=100%>");
-        $this->appendHtml("<div class=\"headband-text\">".$this->text."</div>");
-        $this->appendHtml("</div>");
+        $this->appendHtml(<<<HTML
+            <div class="headband" url="{$this->url}">
+            <img class="headband-image" src="{$this->image}" alt="image" width=100% height=100%>
+            <div class="headband-text">{$this->text}</div>
+            </div>
+        HTML);
         return $this->html;
     }
 

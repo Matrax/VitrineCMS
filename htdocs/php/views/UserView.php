@@ -33,24 +33,35 @@ class UserView extends View
     {
         for($i = 0; $i < sizeof($this->getContents()); $i++)
         {
-            $this->getBody()->appendHtml($this->getContents()[$i]->getHTML());
+            $this->getBody()->appendHtml(<<<HTML
+                {$this->getContents()[$i]->getHTML()}
+            HTML);
         }
-        $html = "<!doctype html>";
-        $html .= "<html lang=\"fr\">";
-        $html .= "<head>";
-        $html .= $this->getHead()->getHtml();
-        $html .= "</head>";
-        $html .= "<body>";
-        $html .= $this->getBody()->getHtml();
+
+        $html = <<<HTML
+            <!doctype html>
+            <html lang="fr">
+            <head>
+            {$this->getHead()->getHtml()}
+            </head>
+            <body>
+            {$this->getBody()->getHtml()}
+        HTML;
+        
         if(Configuration::getConfiguration("administration-link") == "yes")
         {
-            $html .= "<div class=\"link\">";
-            $html .= "<div class=\"go-home\">Accueil</div> | ";
-            $html .= "<div class=\"go-admin\">Administration</div>";
-            $html .= "</div>";
+            $html .= <<<HTML
+                <div class="link">
+                <div class="go-home">Accueil</div> | <div class="go-admin">Administration</div>
+                </div>
+            HTML;
         }
-        $html .= "</body>";
-        $html .= "</html>";
+
+        $html .= <<<HTML
+            </body>
+            </html>
+        HTML;   
+        
         echo($html);
     }
 }

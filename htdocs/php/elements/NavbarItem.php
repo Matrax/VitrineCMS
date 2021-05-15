@@ -50,7 +50,9 @@ class NavbarItem extends HTMLContent
      */
     public function onCreateHtml() : string
     {
-        $this->appendHtml("<div class=\"navbar-item\">".$this->text."</div>");
+        $this->appendHtml(<<<HTML
+            <div class="navbar-item">{$this->text}</div>
+        HTML);
         return $this->html;
     }
 
@@ -63,7 +65,9 @@ class NavbarItem extends HTMLContent
      */
     public function onCreateAdminHtml() : string
     {
-        $this->appendHtml("<div class=\"navbar-item\">".$this->text."</div>");
+        $this->appendHtml(<<<HTML
+            <div class="navbar-item">{$this->text}</div>
+        HTML);
         return $this->html;
     }
 
