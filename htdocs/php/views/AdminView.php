@@ -123,14 +123,17 @@ class AdminView extends View
             <div class="modal-image-content">
         HTML;
 
-        foreach (array_diff(scandir("content/images"), [".", ".."]) as $key => $value) 
+        if(is_dir("content/images"))
         {
-            $html .= <<<HTML
-            <div class="modal-container-content">
-            <img class="modal-image" src="content/images/{$value}" width=100px height=100px>
-            <div class="delete-image-button" image="{$value}">Supprimer</div>
-            </div>
-            HTML;
+            foreach (array_diff(scandir("content/images"), [".", ".."]) as $key => $value) 
+            {
+                $html .= <<<HTML
+                <div class="modal-container-content">
+                <img class="modal-image" src="content/images/{$value}" width=100px height=100px>
+                <div class="delete-image-button" image="{$value}">Supprimer</div>
+                </div>
+                HTML;
+            }
         }
 
         $html .= <<<HTML

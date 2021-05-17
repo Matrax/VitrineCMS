@@ -73,8 +73,6 @@ class FacebookCarrousel extends HTMLContent
     public function onCreateHtml() : string
     {
         $count = 0;
-        $url = file_get_contents("https://graph.facebook.com/v10.0/".$this->page_id."/feed?fields=message,created_time,full_picture&access_token=".$this->token."&limit=7");
-        if($url != false) $feed = json_decode($url, true);
 
         $this->appendHtml(<<<HTML
             <div class="facebook-carrousel">
@@ -82,21 +80,20 @@ class FacebookCarrousel extends HTMLContent
             <img class="facebook-carrousel-logo" src="content/facebook.png" width=100% height=100%>
             <div class="facebook-carrousel-container">
         HTML);
-
-        if(isset($feed))
-        {
-            $data = array_values($feed["data"]);
+        
+        try {
+            $data = $this->getDataFromFB();
             for($i = 0; $i < sizeof($data); $i++)
             {
-                if(isset($data[$i]["message"])) 
+                if(isset($data[$i]["message"]) == true
+                && isset($data[$i]["created_time"]) == true) 
                 {
                     $message = $data[$i]["message"];
                     $time = substr($data[$i]["created_time"], 0, 10);
-
                     $this->appendHtml(<<<HTML
                         <div class="facebook-carrousel-content" page="{$count}">"$message" | $time
                     HTML);
-
+    
                     if(isset($data[$i]["full_picture"])) 
                     {
                         $full_picture = $data[$i]["full_picture"];
@@ -104,14 +101,16 @@ class FacebookCarrousel extends HTMLContent
                             <img class="facebook-carrousel-image" src="{$full_picture}" width=100% height=100%>
                         HTML);
                     }
-
+    
                     $this->appendHtml(<<<HTML
                         </div>
                     HTML);
-
+    
                     $count++;
                 }
             }
+        } catch (Throwable $th) {
+            $this->appendHtml("Aucun méssage Facebook");
         }
 
         $this->appendHtml(<<<HTML
@@ -143,8 +142,6 @@ class FacebookCarrousel extends HTMLContent
     public function onCreateAdminHtml() : string
     {
         $count = 0;
-        $url = file_get_contents("https://graph.facebook.com/v10.0/".$this->page_id."/feed?fields=message,created_time,full_picture&access_token=".$this->token."&limit=7");
-        if($url != false) $feed = json_decode($url, true);
 
         $this->appendHtml(<<<HTML
             <div class="element-container">
@@ -154,21 +151,20 @@ class FacebookCarrousel extends HTMLContent
             <img class="facebook-carrousel-logo" src="content/facebook.png" width=100% height=100%>
             <div class="facebook-carrousel-container">
         HTML);
-
-        if(isset($feed))
-        {
-            $data = array_values($feed["data"]);
+        
+        try {
+            $data = $this->getDataFromFB();
             for($i = 0; $i < sizeof($data); $i++)
             {
-                if(isset($data[$i]["message"])) 
+                if(isset($data[$i]["message"]) == true
+                && isset($data[$i]["created_time"]) == true) 
                 {
                     $message = $data[$i]["message"];
                     $time = substr($data[$i]["created_time"], 0, 10);
-
                     $this->appendHtml(<<<HTML
                         <div class="facebook-carrousel-content" page="{$count}">"$message" | $time
                     HTML);
-
+    
                     if(isset($data[$i]["full_picture"])) 
                     {
                         $full_picture = $data[$i]["full_picture"];
@@ -176,14 +172,16 @@ class FacebookCarrousel extends HTMLContent
                             <img class="facebook-carrousel-image" src="{$full_picture}" width=100% height=100%>
                         HTML);
                     }
-
+    
                     $this->appendHtml(<<<HTML
                         </div>
                     HTML);
-
+    
                     $count++;
                 }
             }
+        } catch (Throwable $th) {
+            $this->appendHtml("Impossible de récupérer les données de l'API Facebook, peut être que le token est invalide.");
         }
 
         $this->appendHtml(<<<HTML
@@ -252,6 +250,22 @@ class FacebookCarrousel extends HTMLContent
             generateTokenButtonEvent();
         </script>
         HTML;
+    }
+
+    /**
+     * Cette méthode récupère à l'aide de l'identifiant de la page
+     * et le token, les données des méssages associé à la page facebook.
+     * @return array Les données de la page facebook
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
+    public function getDataFromFB() : array
+    {
+        $path = "https://graph.facebook.com/v10.0/".$this->page_id."/feed?fields=message,created_time,full_picture&access_token=".$this->token."&limit=7";
+        $file = file_get_contents($path);
+        $feed = json_decode($file, true);
+        $data = array_values($feed["data"]);
+        return $data;
     }
 
     /**
