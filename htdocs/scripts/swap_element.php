@@ -16,12 +16,17 @@ function swap(array $array, int $actual, int $other) : array
 
 if(Admin::isConnected() && isset($_GET["id"]) && isset($_GET["action"]) && isset($_GET["url"]))
 {
-    $url = "../".$_GET["url"];
-    if(file_exists($url))
-    {
+    try {
+        $url = "../".$_GET["url"];
         $id = (int) $_GET["id"];
+
         $file = file_get_contents($url);
-        $array = array_values(json_decode($file, true));
+        if($file == false) FrontLogger::error("L'url n'existe pas !");
+
+        $json = json_decode($file, true);
+        if($json == false) FrontLogger::error("Erreur au décodage du JSON de la page !");
+        $array = array_values($json);
+
         switch ($_GET["action"]) {
             case "up":
                 if($id > 0) $array = swap($array, $id, $id - 1);
@@ -30,9 +35,13 @@ if(Admin::isConnected() && isset($_GET["id"]) && isset($_GET["action"]) && isset
                 if($id < sizeof($array) - 1) $array = swap($array, $id, $id + 1);
                 break;
         }
-        $json = json_encode($array, JSON_FORCE_OBJECT | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-        file_put_contents($url, $json);
+
+        $result = file_put_contents($url, json_encode($array, JSON_FORCE_OBJECT | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+        if($result == false) FrontLogger::error("Erreur à la sauvegarde du fichier JSON de la page !");
+        
         header("Location: ".$_SERVER["HTTP_REFERER"]);
+    } catch (Throwable $th) {
+        FrontLogger::error("Erreur au swap de deux élements de la page");
     }
 } else {
     header("Location: ../html/connect.html");

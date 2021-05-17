@@ -7,6 +7,7 @@ Configuration::loadConfiguration("../../configuration.json");
 require_once("../php/users/Admin.php");
 require_once("../php/utils/ClassUtils.php");
 require_once("../php/utils/HTMLContent.php");
+require_once("../php/controllers/FrontLogger.php");
 ClassUtils::includeAllContainerClasses("../php");
 
 function insert(array $source) : array
@@ -47,12 +48,21 @@ if(Admin::isConnected())
 {
     if(isset($_GET["url"]) && isset($_GET["type"]) && isset($_GET["id"]))
     {
-        $url = "../".$_GET["url"];
-        $file = file_get_contents($url);
-        $json = array_values(json_decode($file, true));
-        $newJson = insert($json);
-        file_put_contents($url, json_encode($newJson, JSON_FORCE_OBJECT | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-        var_dump($_SERVER);
+        try {
+            $url = "../".$_GET["url"];
+            $file = file_get_contents($url);
+            if($file == false) FrontLogger::error("L'url n'existe pas !");
+    
+            $json = array_values(json_decode($file, true));
+            if($json == false) FrontLogger::error("Erreur au décodage du JSON de la page !");
+    
+            $newJson = insert($json);
+            $result = file_put_contents($url, json_encode($newJson, JSON_FORCE_OBJECT | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+            if($result == false) FrontLogger::error("Erreur à la sauvegarde du fichier JSON de la page !");
+        } catch (\Throwable $th) {
+            FrontLogger::error("Erreur à la création d'un nouveau élement !");
+        }
+
         header("Location: ".$_SERVER["HTTP_REFERER"]);
     }
 } else {

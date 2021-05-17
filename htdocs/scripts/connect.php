@@ -5,6 +5,7 @@ declare(strict_types = 1);
 require_once("../php/utils/Configuration.php");
 Configuration::loadConfiguration("../../configuration.json");
 require_once("../php/users/Admin.php");
+require_once("../php/controllers/FrontLogger.php");
 
 if(isset($_POST) && isset($_POST["login"]) && isset($_POST["password"]))
 {

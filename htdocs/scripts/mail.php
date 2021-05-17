@@ -2,6 +2,8 @@
 
 declare(strict_types = 1);
 
+require_once("../php/controllers/FrontLogger.php");
+
 $received = false;
 
 if(isset($_POST["email"]) == true && isset($_POST["destination"]) == true
@@ -21,7 +23,5 @@ if(isset($_POST["email"]) == true && isset($_POST["destination"]) == true
 
 if($received == false) 
 {
-    header("Location: ../html/mail_error.html");
-} else {
-    header("Location: ../html/mail_ok.html");
+    FrontLogger::error("Erreur à l'envoie du mail !");
 }
