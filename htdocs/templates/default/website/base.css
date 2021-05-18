@@ -29,6 +29,12 @@ body
     cursor: pointer;
 }
 
+.go-cgu
+{
+    display: inline;
+    cursor: pointer;
+}
+
 @media (max-width: 900px)
 {
     body 

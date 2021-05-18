@@ -1,0 +1,90 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;UMLClass&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;170&lt;/x&gt;&lt;y&gt;650&lt;/y&gt;&lt;w&gt;210&lt;/w&gt;&lt;h&gt;190&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;FrontLogger
+--
++ __construct() : void
+_error(string $message) : void&lt;/panel_attributes&gt;&lt;additional_attributes&gt;&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;UMLClass&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;90&lt;/x&gt;&lt;y&gt;651&lt;/y&gt;&lt;w&gt;210&lt;/w&gt;&lt;h&gt;190&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;UserView
+--
++ __construct() : void
++ render() : void&lt;/panel_attributes&gt;&lt;additional_attributes&gt;&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;UMLClass&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;650&lt;/x&gt;&lt;y&gt;50&lt;/y&gt;&lt;w&gt;210&lt;/w&gt;&lt;h&gt;190&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;FrontLogger
+--
++ __construct() : void
+_error(string $message) : void&lt;/panel_attributes&gt;&lt;additional_attributes&gt;&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;UMLClass&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;650&lt;/x&gt;&lt;y&gt;50&lt;/y&gt;&lt;w&gt;210&lt;/w&gt;&lt;h&gt;190&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;FrontLogger
+--
++ __construct() : void
+_error(string $message) : void&lt;/panel_attributes&gt;&lt;additional_attributes&gt;&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;UMLClass&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;610&lt;/x&gt;&lt;y&gt;250&lt;/y&gt;&lt;w&gt;210&lt;/w&gt;&lt;h&gt;190&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;FrontLogger
+--
+_+ getInstance() : FrontController_
++ __construct() : void
++ render() : void
++ getPages() : array
++ getRole() : string
++ getArea() : string&lt;/panel_attributes&gt;&lt;additional_attributes&gt;&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;UMLClass&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;560&lt;/x&gt;&lt;y&gt;270&lt;/y&gt;&lt;w&gt;210&lt;/w&gt;&lt;h&gt;190&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;FrontLogger
+--
+_+ getInstance() : FrontController_
++ __construct() : void
++ render() : void
++ getPages() : array
++ getRole() : string
++ getArea() : string&lt;/panel_attributes&gt;&lt;additional_attributes&gt;&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;UMLClass&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;370&lt;/x&gt;&lt;y&gt;250&lt;/y&gt;&lt;w&gt;210&lt;/w&gt;&lt;h&gt;190&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;FrontController
+--
+_- instance : FrontController_
+- dispatcher : Dispatcher
+- view : View
+--
+_+ getInstance() : FrontController_
++ __construct() : void
++ render() : void
++ getPages() : array
++ getRole() : string
++ getArea() : string&lt;/panel_attributes&gt;&lt;additional_attributes&gt;&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>690</x><y>19</y><w>210</w><h>190</h></coordinates><panel_attributes>FrontController
+--
+_- instance : FrontController_
+- dispatcher : Dispatcher
+- view : View
+--
+_+ getInstance() : FrontController_
++ __construct() : void
++ render() : void
++ getPages() : array
++ getRole() : string
++ getArea() : string</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>110</x><y>669</y><w>210</w><h>190</h></coordinates><panel_attributes>FrontLogger
+--
++ __construct() : void
+_error(string $message) : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>410</x><y>19</y><w>210</w><h>190</h></coordinates><panel_attributes>Dispatcher
+--
++ __construct() : void
++ dispatch() : void
++ generateView() : View
++ readArea() : string</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>550</x><y>389</y><w>220</w><h>310</h></coordinates><panel_attributes>/View/
+--
+- $head : Head
+- $body : Body 
+- $file : string
+- $template : string
+- $json : array
+- $contents array
+--
+/+ render() : void/
+--
++ __construct() : void
++ loadContents(string $file) : void
++ loadCssFiles(string $directory) : void
++ loadJsFiles(string $directory) : void
++ setTemplate(string $template) : void
++ getHead() : Head
++ getBody() : Body
++ getFile() : string
++ getTemplate() : string
++ getJson() : array
++ getContents() : array</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>940</x><y>340</y><w>210</w><h>190</h></coordinates><panel_attributes>UserView
+--
++ __construct() : void
++ render() : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>940</x><y>566</y><w>210</w><h>190</h></coordinates><panel_attributes>AdminView
+--
++ __construct() : void
++ render() : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>435</y><w>460</w><h>190</h></coordinates><panel_attributes>ClassUtils
+--
+_+ getClassWithType(string $type) : ?ReflectionClass_
+_+ getContainerName(string $name) : string_
+_+ getAllContainerClasses() : array_
+_+ includeAllContainerClasses(string $phpPath)_
+_+ invokeStaticMethod(ReflectionClass $class, string $method, mixed $data) : mixed_</panel_attributes><additional_attributes></additional_attributes></element></diagram>

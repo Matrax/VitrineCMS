@@ -10,13 +10,13 @@ require_once("../php/controllers/FrontLogger.php");
 if(Admin::isConnected() && isset($_GET["url"]))
 {
     try {
-        if($_GET["url"] != "index")
+        if($_GET["url"] != "index" && $_GET["url"] != "mentions")
         {
             $url = "../../".$_GET["url"];
             unlink($url);
             header("Location: ../index.php?role=admin");
         } else {
-            FrontLogger::error("Impossible de supprimer la page d'accueil.");
+            FrontLogger::error("Impossible de supprimer la page d'accueil ou la page mentions légales.");
         }
     } catch (Throwable $th) {
         FrontLogger::error("Erreur à la suppression de la page.");

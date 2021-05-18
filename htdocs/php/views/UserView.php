@@ -52,7 +52,7 @@ class UserView extends View
         {
             $html .= <<<HTML
                 <div class="link">
-                <div class="go-home">Accueil</div> | <div class="go-admin">Administration</div>
+                <div class="go-home">Accueil</div> | <div class="go-admin">Administration</div> | <div class="go-cgu">Mentions Légales</div> 
                 </div>
             HTML;
         }

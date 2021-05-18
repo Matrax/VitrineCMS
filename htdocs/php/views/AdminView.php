@@ -80,7 +80,7 @@ class AdminView extends View
 
         $html = <<<HTML
             <div class="navbar-administration">
-            <div class="navbar-line">\n
+            <div class="navbar-line">
         HTML;
 
         for($i = 0; $i < sizeof($pages); $i++)
@@ -96,7 +96,7 @@ class AdminView extends View
             <div class="navbar-button-save-administration" id="button-save">Sauvegarder la page</div>
         HTML;
 
-        if(isset($_GET["area"]) && $_GET["area"] != "index")
+        if(isset($_GET["area"]) && $_GET["area"] != "index" && $_GET["area"] != "mentions")
         {
             $html .= <<<HTML
                 <div class="navbar-button-delete-administration" id="button-delete">Supprimer cette page</div>
