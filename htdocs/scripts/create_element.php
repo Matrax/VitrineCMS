@@ -49,7 +49,7 @@ if(Admin::isConnected())
     if(isset($_GET["url"]) && isset($_GET["type"]) && isset($_GET["id"]))
     {
         try {
-            $url = "../".$_GET["url"];
+            $url = "../../".$_GET["url"];
             $file = file_get_contents($url);
             if($file == false) FrontLogger::error("L'url n'existe pas !");
     

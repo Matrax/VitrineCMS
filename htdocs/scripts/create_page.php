@@ -19,7 +19,7 @@ if(Admin::isConnected())
             }
         }
         JSON;
-        $result = file_put_contents("../webpage/".$_GET["area"].".json", $json);
+        $result = file_put_contents("../../webpage/".$_GET["area"].".json", $json);
         if($result == false) FrontLogger::error("Erreur à la sauvegarde du fichier JSON de la page !");
         
         header("Location: ../index.php?area=".$_GET["area"]."&role=admin");

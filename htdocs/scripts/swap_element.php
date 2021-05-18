@@ -17,7 +17,7 @@ function swap(array $array, int $actual, int $other) : array
 if(Admin::isConnected() && isset($_GET["id"]) && isset($_GET["action"]) && isset($_GET["url"]))
 {
     try {
-        $url = "../".$_GET["url"];
+        $url = "../../".$_GET["url"];
         $id = (int) $_GET["id"];
 
         $file = file_get_contents($url);

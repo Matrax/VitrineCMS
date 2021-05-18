@@ -10,7 +10,7 @@ require_once("../php/controllers/FrontLogger.php");
 if(Admin::isConnected() && isset($_GET["id"]) && isset($_GET["container-id"]) && isset($_GET["url"]))
 {
     try {
-        $url = "../".$_GET["url"];
+        $url = "../../".$_GET["url"];
         $file = file_get_contents($url);
         if($file == false) FrontLogger::error("L'url n'existe pas !");
 

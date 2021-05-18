@@ -65,7 +65,7 @@ class FrontController
      */
     public function getPages()
     {
-        $pages = scandir("webpage");
+        $pages = scandir("../webpage");
         $list = array();
         for($i = 0; $i < sizeof($pages); $i++)
         {

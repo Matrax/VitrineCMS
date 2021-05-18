@@ -66,9 +66,9 @@ class Dispatcher
     {
         if(isset($_GET["area"]) == true) 
         {
-            return file_get_contents("webpage/".$_GET["area"].".json");
+            return file_get_contents("../webpage/".$_GET["area"].".json");
         } 
-        return file_get_contents("webpage/index.json");
+        return file_get_contents("../webpage/index.json");
     }
 
 }

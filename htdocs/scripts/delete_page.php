@@ -12,7 +12,7 @@ if(Admin::isConnected() && isset($_GET["url"]))
     try {
         if($_GET["url"] != "index")
         {
-            $url = "../".$_GET["url"];
+            $url = "../../".$_GET["url"];
             unlink($url);
             header("Location: ../index.php?role=admin");
         } else {
