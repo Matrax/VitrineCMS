@@ -1,12 +1,13 @@
 .footer
 {
-    height: 200px;
+    height: 180px;
     margin: 20px;
     padding: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     border-radius: 20px;
-    background: radial-gradient(circle, rgba(251,127,63,1) 0%, rgba(252,166,70,1) 100%);
+    border: 1px solid black;
+    background-color: greenyellow;
 }
 
 .footer-item

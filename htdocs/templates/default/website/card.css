@@ -6,7 +6,8 @@
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-between;
     border-radius: 20px;
-    background: linear-gradient(35deg, rgba(12,126,213,1) 0%, rgba(0,255,194,1) 35%, rgba(0,200,255,1) 64%, rgba(0,154,189,1) 100%); 
+    border: 1px solid black;
+    background-color: greenyellow;
     filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.3));
 }
 

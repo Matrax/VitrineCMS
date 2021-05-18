@@ -96,17 +96,20 @@ function openModalEvent()
     for(var i = 0; i < buttons.length; i++)
     {
         var attributes = buttons[i].attributes;
-        switch(attributes["target"].value)
+        if(attributes["target"] != null)
         {
-            case "image":
-                buttons[i].addEventListener("click", function() { openModal(imageModal, this); });
-                break;
-            case "url":
-                buttons[i].addEventListener("click", function() { openModal(urlModal, this); });
-                break;
-            case "container":
-                buttons[i].addEventListener("click", function() { openModal(containerModal, this); });
-                break;
+            switch(attributes["target"].value)
+            {
+                case "image":
+                    buttons[i].addEventListener("click", function() { openModal(imageModal, this); });
+                    break;
+                case "url":
+                    buttons[i].addEventListener("click", function() { openModal(urlModal, this); });
+                    break;
+                case "container":
+                    buttons[i].addEventListener("click", function() { openModal(containerModal, this); });
+                    break;
+            }
         }
     }
 }

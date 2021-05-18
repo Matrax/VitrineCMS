@@ -2,5 +2,161 @@
     "0": {
         "type": "head",
         "title": "Titre du site"
+    },
+    "1": {
+        "type": "mail-sender",
+        "image": "content\/none.png",
+        "elements": {
+            "0": {
+                "name": "Test",
+                "mail": "test@mail.fr"
+            },
+            "1": {
+                "name": "Test 2",
+                "mail": "test2@mail.fr"
+            }
+        }
+    },
+    "2": {
+        "type": "navbar",
+        "elements": {
+            "0": {
+                "type": "navbar-button",
+                "text": "Bouton",
+                "url": "index"
+            },
+            "1": {
+                "type": "navbar-item",
+                "text": "Test"
+            }
+        }
+    },
+    "3": {
+        "type": "facebook-carrousel",
+        "token": "",
+        "page_id": "",
+        "app_id": "",
+        "app_key": ""
+    },
+    "4": {
+        "type": "footer",
+        "elements": {
+            "0": {
+                "image": "content\/none.png"
+            },
+            "1": {
+                "image": "content\/none.png"
+            },
+            "2": {
+                "image": "content\/none.png"
+            }
+        }
+    },
+    "5": {
+        "type": "card-container",
+        "elements": {
+            "0": {
+                "image": "content\/none.png",
+                "text": "Text"
+            },
+            "1": {
+                "image": "content\/none.png",
+                "text": "Text"
+            },
+            "2": {
+                "image": "content\/none.png",
+                "text": "Text"
+            }
+        }
+    },
+    "6": {
+        "type": "banner",
+        "image": "content\/none.png"
+    },
+    "7": {
+        "type": "openstreet-map",
+        "zoom": "1",
+        "lat": "0",
+        "lng": "0",
+        "elements": {
+            "0": {
+                "lat": "0",
+                "lng": "0"
+            },
+            "1": {
+                "lat": "1",
+                "lng": "1"
+            }
+        }
+    },
+    "8": {
+        "type": "paragraph",
+        "title": "Title",
+        "text": "Text",
+        "image": "content\/none.png"
+    },
+    "9": {
+        "type": "gallery",
+        "elements": {
+            "0": {
+                "image": "content\/none.png"
+            },
+            "1": {
+                "image": "content\/none.png"
+            },
+            "2": {
+                "image": "content\/none.png"
+            },
+            "3": {
+                "image": "content\/none.png"
+            }
+        }
+    },
+    "10": {
+        "type": "headband-container",
+        "elements": {
+            "0": {
+                "image": "content\/none.png",
+                "text": "Text",
+                "url": "index"
+            },
+            "1": {
+                "image": "content\/none.png",
+                "text": "Text",
+                "url": "index"
+            },
+            "2": {
+                "image": "content\/none.png",
+                "text": "Text",
+                "url": "index"
+            },
+            "3": {
+                "image": "content\/none.png",
+                "text": "Text",
+                "url": "index"
+            }
+        }
+    },
+    "11": {
+        "type": "google-map",
+        "key": "",
+        "zoom": "1",
+        "lat": "0",
+        "lng": "0",
+        "elements": {
+            "0": {
+                "lat": "0",
+                "lng": "0"
+            },
+            "1": {
+                "lat": "1",
+                "lng": "1"
+            }
+        }
+    },
+    "12": {
+        "type": "panel",
+        "title": "Title",
+        "text": "Text"
     }
 }

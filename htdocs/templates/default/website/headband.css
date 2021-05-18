@@ -10,6 +10,8 @@
     margin: 10px;
     display: flex;
     border-radius: 10px;
+    background-color: greenyellow;
+    border: 1px solid black;
     box-shadow: 0 9px 15px rgba(0,0,0,0.30), 0 10px 7px rgba(0,0,0,0.22);
 }
 

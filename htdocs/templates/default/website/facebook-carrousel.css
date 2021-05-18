@@ -7,7 +7,8 @@
     justify-content: center;
     text-align: center;
     border-radius: 20px;
-    background: linear-gradient(35deg, rgba(12,126,213,1) 0%, rgba(0,255,194,1) 35%, rgba(0,200,255,1) 64%, rgba(0,154,189,1) 100%); 
+    background-color: greenyellow;
+    border: 1px solid black;
     box-shadow: 0 9px 15px rgba(0, 0, 0, 0.30), 0 10px 7px rgba(0,0,0,0.22);
 }
 
@@ -68,7 +69,7 @@
 .facebook-carrousel-page:hover
 {
     cursor: pointer;
-    color: orange;
+    color: greenyellow;
 }
 
 @keyframes fade 

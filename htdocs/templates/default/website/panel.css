@@ -8,6 +8,7 @@
     grid-template-rows: 1fr;
     border-radius: 30px;
     background-color: white;
+    border: 1px solid black;
     filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.3));
 }
 
@@ -17,7 +18,7 @@
     font-weight: bold;
     border-radius: 30px;
     padding: 10px 10px 10px 30px;
-    background: linear-gradient(90deg, rgba(0,255,194,1) 0%, rgba(0,200,255,1) 36%);
+    background: greenyellow;
     animation: fade linear 0.5s;
 }
 

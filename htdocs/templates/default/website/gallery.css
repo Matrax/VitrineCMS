@@ -3,10 +3,12 @@
     display: grid;
     margin: 20px;
     padding: 20px;
+    gap: 20px;
     grid-template-columns: 1fr 1fr;
     border-radius: 20px;
+    border: 1px solid black;
     box-shadow: 0 9px 15px rgba(0,0,0,0.30), 0 10px 7px rgba(0,0,0,0.22);
-    gap: 20px;
+    background-color: greenyellow;
 }
 
 .gallery-image
