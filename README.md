@@ -10,10 +10,6 @@ Le dossier documentation contient une documentation généré sous Doxygen du co
 Le dossier uml contient une réprésentation sous forme de diagramme des classes PHP.
 Le fichier Configuration.json contient les configurations du site web.
 
-Le dossier documentation n'est pas obligatoire, il s'agit
-simplement d'un dossier contenant une documentation
-généré avec Doxygen.
-
 ## Description
 Il s'agit d'un CMS français conçu pour la création de site vitrine, configurable
 facilement par un développeur ou un simple utilisateur.
