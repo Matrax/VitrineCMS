@@ -4,11 +4,11 @@
 PHP 8.0 / JavaScript / CSS
 
 ## Installation
-Il suffit de mettre le contenu du dossier htdocs 
-dans la partie publique de votre site web (htdocs, public_html ...).
-Le fichier configuration.json doit être obligatoirement présent mais
-pas dans la partie publique de votre site et dans le dossier parent
-du dossier ou se trouve votre site.
+Le dossier htdocs contient le contenu publique de votre site web.
+Le dossier webpage contient les pages de votre site web sous format JSON.
+Le dossier documentation contient une documentation généré sous Doxygen du code PHP.
+Le dossier uml contient une réprésentation sous forme de diagramme des classes PHP.
+Le fichier Configuration.json contient les configurations du site web.
 
 Le dossier documentation n'est pas obligatoire, il s'agit
 simplement d'un dossier contenant une documentation
