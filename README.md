@@ -3,7 +3,7 @@
 ## Technologies
 PHP 8.0 / JavaScript / CSS
 
-## Installation
+## Dossiers
 Le dossier htdocs contient le contenu publique de votre site web.
 Le dossier webpage contient les pages de votre site web sous format JSON.
 Le dossier documentation contient une documentation généré sous Doxygen du code PHP.
