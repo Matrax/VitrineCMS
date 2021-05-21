@@ -59,7 +59,7 @@ if(Admin::isConnected())
             $newJson = insert($json);
             $result = file_put_contents($url, json_encode($newJson, JSON_FORCE_OBJECT | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
             if($result == false) FrontLogger::error("Erreur à la sauvegarde du fichier JSON de la page !");
-        } catch (\Throwable $th) {
+        } catch (Throwable $th) {
             FrontLogger::error("Erreur à la création d'un nouveau élement !");
         }
 
