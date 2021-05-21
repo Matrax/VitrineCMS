@@ -42,7 +42,7 @@ class ClassUtils
      * Cette fonction renvoiele nom de la classe en francais de la classe
      * passé en paramètre.
      * Le nom correspond à la métadonnée @name écrit dans la classe.
-     * @param string $name Le nom de la classe en francais
+     * @param string $className Le nom de la classe en francais
      * @author Alexandre Pierret
      * @version 1.0
      */

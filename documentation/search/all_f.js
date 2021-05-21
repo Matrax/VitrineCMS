@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['panel_2ephp_98',['Panel.php',['../Panel_8php.html',1,'']]],
-  ['paragraph_2ephp_99',['Paragraph.php',['../Paragraph_8php.html',1,'']]]
+  ['panel_2ephp_88',['Panel.php',['../Panel_8php.html',1,'']]],
+  ['paragraph_2ephp_89',['Paragraph.php',['../Paragraph_8php.html',1,'']]]
 ];
