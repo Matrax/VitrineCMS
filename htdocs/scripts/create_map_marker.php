@@ -19,12 +19,13 @@ if(Admin::isConnected() && isset($_GET["url"]) && isset($_GET["container-id"]))
 
         $lastId = (int) array_key_last($json[$_GET["container-id"]]["elements"]);
         $elementId = (string) ($lastId + 1);
-        $json[$_GET["container-id"]]["elements"][$elementId]["image"] = "content/none.png";
+        $json[$_GET["container-id"]]["elements"][$elementId]["lat"] = "0";
+        $json[$_GET["container-id"]]["elements"][$elementId]["lng"] = "0";
         $result = file_put_contents($url, json_encode($json, JSON_FORCE_OBJECT | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
         if($result == false) FrontLogger::error("Erreur à la sauvegarde du fichier JSON de la page !");
 
         header("Location: ".$_SERVER["HTTP_REFERER"]);
     } catch (\Throwable $th) {
-        FrontLogger::error("Erreur à la création d'une image dans une galerie d'image !");
+        FrontLogger::error("Erreur à la création d'un marqueur sur la map !");
     }
 }

@@ -149,7 +149,7 @@ class MailSender extends HTMLContent
             <button role="admin" target="image" id="{$this->id}" value="{$this->image}">{$this->image}</button>
             </div>
             <div class="element-title">Adresses</div>
-            <div class="element-manager-2">
+            <div class="element-manager-3">
         HTML);
 
         foreach ($this->contacts as $key => $value) 
@@ -160,6 +160,7 @@ class MailSender extends HTMLContent
             $this->appendHtml(<<<HTML
                 <input role="admin" target="name" container-id="{$this->id}" id="{$key}" value="{$name}">
                 <input role="admin" target="mail" container-id="{$this->id}" id="{$key}" value="{$email}">
+                <div class="subelement-delete-button" container-id="{$this->id}" id="{$key}">Supprimer le contact</div>
             HTML);
         }
 
@@ -167,6 +168,7 @@ class MailSender extends HTMLContent
             </div>
             <div class="element-title">Options</div>
             <div class="elements-options">
+            <div class="subelement-create-button" target="mailsender" container-id="{$this->id}">Ajouter un contact</div>
             <div class="element-delete-button" id="{$this->id}">Supprimer</div>
             <svg class="element-swap-button" id="{$this->id}" action="up" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z"/>

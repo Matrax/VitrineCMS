@@ -61,6 +61,15 @@ function createElementEvent()
                 case "gallery":
                     window.location.href = "scripts/create_gallery_image.php?url=" + url + "&container-id=" + containerid;
                     break;
+                case "googlemap":
+                    window.location.href = "scripts/create_map_marker.php?url=" + url + "&container-id=" + containerid;
+                    break;
+                case "openstreetmap":
+                    window.location.href = "scripts/create_map_marker.php?url=" + url + "&container-id=" + containerid;
+                    break;
+                case "mailsender":
+                    window.location.href = "scripts/create_mailsender_contact.php?url=" + url + "&container-id=" + containerid;
+                    break;
             }
         });
     }
