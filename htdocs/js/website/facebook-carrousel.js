@@ -24,6 +24,16 @@ window.addEventListener("load", function()
                     contents[j].style.display = "none";
                 }
             }
+
+            for(var j = 0; j < pages.length; j++)
+            {
+                if(this != pages[j])
+                {
+                    pages[j].style.color = "black";
+                } else {
+                    pages[j].style.color = "grey";
+                }
+            }
         });
     }
 });
