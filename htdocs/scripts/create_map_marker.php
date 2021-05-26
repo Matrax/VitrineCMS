@@ -25,7 +25,7 @@ if(Admin::isConnected() && isset($_GET["url"]) && isset($_GET["container-id"]))
         if($result == false) FrontLogger::error("Erreur à la sauvegarde du fichier JSON de la page !");
 
         header("Location: ".$_SERVER["HTTP_REFERER"]);
-    } catch (\Throwable $th) {
+    } catch (Throwable $th) {
         FrontLogger::error("Erreur à la création d'un marqueur sur la map !");
     }
 }

@@ -143,12 +143,6 @@ class Footer extends HTMLContent
         return $this->html;
     }
     
-    /**
-     * Cette méthode permet d'ajouter une image
-     * @param string $image L'url de l'image à ajouter
-     * @author Alexandre Pierret
-     * @version 1.0
-     */
     public function addImage(string $image)
     {
         array_push($this->images, $image);

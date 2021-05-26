@@ -197,46 +197,21 @@ class OpenStreetMap extends HTMLContent
         return $this->html;
     }
     
-    /**
-     * Cette méthode affecte le zoom de la map
-     * @param int $zoom Le zoom de la map
-     * @author Alexandre Pierret
-     * @version 1.0
-     */
     public function setZoom(int $zoom)
     {
         $this->zoom = $zoom;
     }
 
-    /**
-     * Cette méthode affecte le latitude de la map
-     * @param float $lat La latitude de la map
-     * @author Alexandre Pierret
-     * @version 1.0
-     */
     public function setLat(float $lat)
     {
         $this->lat = $lat;
     }
 
-    /**
-     * Cette méthode affecte la longitude de la map
-     * @param float $lng La longitude de la map
-     * @author Alexandre Pierret
-     * @version 1.0
-     */
     public function setLng(float $lng)
     {
         $this->lng = $lng;
     }
 
-    /**
-     * Cette méthode ajoute un marqueur sur la map
-     * @param string $lat La latitude du marqueur
-     * @param string $lng La longitude de la map
-     * @author Alexandre Pierret
-     * @version 1.0
-     */
     public function addLocation(string $lat, string $lng)
     {
         array_push($this->locations, $lat.":".$lng);

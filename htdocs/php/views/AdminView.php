@@ -106,6 +106,7 @@ class AdminView extends View
         $html .= <<<HTML
             <div class="navbar-button-quit-administration" id="button-home">Retour au site</div>
             <div class="navbar-button-disconnect-administration" id="button-disconnect">Déconnexion</div>
+            <div class="navbar-button-password-administration" id="button-password">Mot de passe</div>
             <div class="navbar-button-create-administration" id="button-create">Créer une page</div>
             <input class="navbar-create-input" type="text" placeholder="Nom de la nouvelle page">
             </div>

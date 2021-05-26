@@ -148,12 +148,6 @@ class Gallery extends HTMLContent
         return $this->html;
     }
     
-    /**
-     * Cette méthode ajoute une image à la galerie
-     * @param string $image L'image à ajouter
-     * @author Alexandre Pierret
-     * @version 1.0
-     */
     public function addImage(string $image)
     {
         array_push($this->images, $image);
