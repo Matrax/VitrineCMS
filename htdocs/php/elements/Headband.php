@@ -84,31 +84,67 @@ class Headband extends HTMLContent
         return $this->html;
     }
 
+    /**
+     * Cette méthode affecte l'image du bandeau
+     * @param string $image L'image à affecter
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
     public function setImage(string $image)
     {
         $this->image = $image;
     }
 
+    /**
+     * Cette méthode affecte le texte du bandeau
+     * @param string $text Le texte à affecter
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
     public function setText(string $text)
     {
         $this->text = $text;
     }
 
+    /**
+     * Cette méthode affecte l'URL de redirection du bandeau
+     * @param string $url L'URL de redirection à affecter
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
     public function setUrl(string $url)
     {
         $this->url = $url;
     }
 
+    /**
+     * Cette méthode renvoie l'image du bandeau
+     * @return string L'image du bandeau
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
     public function getImage() : string
     {
         return $this->image;
     }
 
+    /**
+     * Cette méthode renvoie le texte du bandeau
+     * @return string Le texte du bandeau
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
     public function getText() : string
     {
         return $this->text;
     }
 
+    /**
+     * Cette méthode renvoie l'URL de redirection du bandeau
+     * @return string L'URL de redirection du bandeau.
+     * @author Alexandre Pierret
+     * @version 1.0
+     */
     public function getUrl() : string
     {
         return $this->url;
