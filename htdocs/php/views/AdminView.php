@@ -128,7 +128,7 @@ class AdminView extends View
             foreach (array_diff(scandir("content/images"), [".", ".."]) as $key => $value) 
             {
                 $html .= <<<HTML
-                <div class="modal-container-content">
+                <div class="modal-card">
                 <img class="modal-image" src="content/images/{$value}" width=100px height=100px>
                 <div class="delete-image-button" image="{$value}">Supprimer</div>
                 </div>

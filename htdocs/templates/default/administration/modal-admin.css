@@ -18,11 +18,14 @@
     border-radius: 20px;
 }
 
+.modal-card
+{
+    display: inline-block;
+}
+
 .modal-image-content
 {
-    display: flex;
-    flex-direction: row;
-    height: 200px;
+    height: 300px;
     overflow: auto;
 }
 
@@ -30,12 +33,6 @@
 {
     height: 300px;
     overflow: auto;
-}
-
-.modal-container-content
-{
-    display: flex;
-    flex-direction: column;
 }
 
 .modal-button-content
