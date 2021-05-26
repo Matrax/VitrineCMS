@@ -28,7 +28,7 @@ if(Admin::isConnected())
                     <input name="login" type="text" placeholder="Identifiant" required>
                     <input name="password" type="password" placeholder="Mot de passe" required>
                     <input name="new_password" type="password" placeholder="Nouveau mot de passe" required>
-                    <input class="submit" type="submit" value="Connexion">
+                    <input class="submit" type="submit" value="Changer">
                 </form>
             </body>
         </html>
