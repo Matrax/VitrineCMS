@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>VitrineCMS: Explications de VitrineCMS</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -31,7 +31,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.2 -->
+<!-- Généré par Doxygen 1.9.1 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
@@ -62,35 +62,37 @@ $(function() {
 </iframe>
 </div>
 
-<div><div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
 <div class="title">Explications de VitrineCMS </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p class=""><a class="anchor" id="md_README"></a> </p>
+<div class="textblock"><p><a class="anchor" id="md_README"></a> </p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Technologies</h1>
-<p class="">PHP 8.0 / JavaScript / CSS</p>
+<p>PHP 8.0 / JavaScript / CSS</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Dossiers</h1>
-<p class="">Le dossier htdocs contient le contenu publique de votre site web. Le dossier webpage contient les pages de votre site web sous format JSON. Le dossier documentation contient une documentation généré sous Doxygen du code PHP. Le dossier uml contient une réprésentation sous forme de diagramme des classes PHP. Le fichier Configuration.json contient les configurations du site web.</p>
+<p>Le dossier htdocs contient le contenu public de votre site web. Le dossier webpage contient les pages de votre site web sous format JSON. Le dossier documentation contient une documentation générée sous Doxygen du code PHP. Le dossier Uml contient une représentation sous forme de diagramme des classes PHP. Le fichier <a class="el" href="classConfiguration.html" title="Classe contenant des méthodes static pour gérer et récupérer des informations du fichier de configura...">Configuration</a> Json contient les configurations du site web.</p>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Description</h1>
-<p class="">Il s'agit d'un CMS français conçu pour la création de site vitrine, configurable facilement par un développeur ou un simple utilisateur. VitrineCMS est conçu pour être évolutif, un développeur peut créer ses propre conteneurs HTML facilement pour apporter de l'originalité aux sites qu'il développe. Mais VitrineCMS est aussi conçu pour qu'un utilisateur ne sachant pas programmer puisse concevoir son site ou apporter des modifications après son développement à l'aide de la page administrateur sans avoir l'expertise d'un développeur.</p>
+<p>Il s'agit d'un CMS français conçu pour la création de sites vitrine, configurable facilement par un développeur ou un simple utilisateur. VitrineCMS est conçu pour être évolutif, un développeur peut créer ses propres conteneurs HTML facilement pour apporter de l'originalité aux sites qu'il développe. Mais VitrineCMS est aussi conçu pour qu'un utilisateur ne sachant pas programmer puisse concevoir son site ou apporter des modifications après son</p>
 <h1><a class="anchor" id="autotoc_md4"></a>
 Fonctionnement</h1>
-<p class="">Le CMS utilise le système de controlleur de vue (<a class="el" href="FrontController_8php.html">FrontController.php</a>). C'est à dire que le site n'est composé que d'un seul poit d'entrer (<a class="el" href="index_8php.html">index.php</a>), et selon les paramètres GET entrés, le controlleur de vue va s'adapter pour afficher la bonne vue à l'utilisateur avec le bon rôle (utilisateur ou administrateur) Lorsqu'un utilisateur effectue une requête au site pour avoir la vue au script <a class="el" href="index_8php.html">index.php</a>, le controlleur de vue fait appel au dispatcher (<a class="el" href="Dispatcher_8php.html">Dispatcher.php</a>) qui va générer la vue démandé par l'utilisateur (vue utilisateur ou vue administrateur). Chaque page du site est sauvegardé sous format JSON pour faciliter sa modification ou sa récupération par le dispatcher car le JSON est un format très rapide à écrire ou lire et se veut plus compacte que d'autre format (HTML ou XML par exemple).</p>
+<p>Le CMS utilise le système de contrôleur de vue (<a class="el" href="FrontController_8php.html">FrontController.php</a>). C'est-à-dire que le site n'est composé que d'un seul point d'entrer (index .php), et selon les paramètres GET entrés, le contrôleur de vue va s'adapter pour afficher la bonne vue à l'utilisateur avec le bon rôle (utilisateur ou administrateur) Lorsqu'un utilisateur effectue une requête au site pour avoir la vue au script index .php, le contrôleur de vue fait appel au dispatcher</p>
 <h1><a class="anchor" id="autotoc_md5"></a>
 Demander une vue</h1>
-<p class="">L'utilisateur demande une vue en faisant une requête à l'aide du lien {domaine}/index.php. (ou simplement avec le nom de domaine, le serveur web appellera <a class="el" href="index_8php.html">index.php</a> automatiquement) L'utilisateur peut préciser la page du site qu'il souhaite accéder avec {domaine}/index.php?area={page}. Le dispatcher se chargera de générer la vue utilisateur avec la page demandé, puis le front controller en fera l'affichage. Si l'utilisateur souhaite basculer sur la vue administrateur de la page pour éffectuer des modifications sur le contenu de la page, l'utilisateur doit ajouter le rôle dans le lien avec {domaine}/index.php?area={page}&amp;role={admin}. Par défaut, si aucune page n'est spécifié dans le lien, la page index sera demandé. Et si aucun role n'est spécifié, la vue utilisateur sera demandé.</p>
+<p>L'utilisateur demande une vue en faisant une requête à l'aide du lien {domaine}/index.php. (ou simplement avec le nom de domaine, le serveur web appellera <a class="el" href="index_8php.html">index.php</a> automatiquement) L'utilisateur peut préciser la page du site qu'il souhaite accéder avec {domaine}/index.php?area={page}. Le dispatcher se chargera de générer la vue utilisateur avec la page demandé, puis le contrôleur de vue en fera l'affichage. <br  />
+ Si l'utilisateur souhaite basculer sur la vue administratrice de la page pour effectuer des modifications sur le contenu de la page, l'utilisateur doit ajouter le rôle dans le lien avec {domaine}/index.php?area={page}&amp;role={admin}. Par défaut, si aucune page n'est spécifiée dans le lien, la page index sera demandé. Et si aucun rôle n'est spécifié, la vue utilisateur sera demandée.</p>
 <h1><a class="anchor" id="autotoc_md6"></a>
 Vue administrateur</h1>
-<p class="">Pour accéder à la vue administrateur d'une page, une connexion est demandé. La connexion demande le login précisé dans le fichier de configuration et le mot de passe crypté en sha512. Le mot de passe entré dans le fichier de configuration doit être en sha512 uniquement. </p>
+<p>Pour accéder à la vue "administrateur" d'une page, une connexion est demandée. La connexion demande le login précisé dans le fichier de configuration et le mot de passe crypté en sha512. Le mot de passe entré dans le fichier de configuration doit être en sha512 uniquement. <br  />
+ Login par défaut: login Mot de passe par défaut: password </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
