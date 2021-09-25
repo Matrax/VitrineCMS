@@ -2,9 +2,7 @@
 
 ## Description (pour les développeurs et utilisateurs)
 Il s'agit d'un CMS français développé pour la création de sites vitrine.
-<br><br>
 VitrineCMS est facilement configurable par un développeur ou par un simple utilisateur.
-<br><br>
 L'avantage est que VitrineCMS possède une partie administration qui permet aux utilisateurs ne sachant pas programmer
 de configurer tout les élements de chaque pages du site web.
 
@@ -37,4 +35,5 @@ et de redéfinir les méthodes onCreateHtml() et onCreateAdminHtml(). VitrineCMS
 
 ## Vue administrateur (pour les développeurs et utilisateurs)
 Login par défaut: login
+<br>
 Mot de passe par défaut: password
