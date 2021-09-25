@@ -1,40 +1,40 @@
-# Explications de VitrineCMS
+# VitrineCMS (1.0)
 
-## Technologies
-PHP 8.0 / JavaScript / CSS
+## Description (pour les développeurs et utilisateurs)
+Il s'agit d'un CMS français développé pour la création de sites vitrine.
+<br><br>
+VitrineCMS est facilement configurable par un développeur ou par un simple utilisateur.
+<br><br>
+L'avantage est que VitrineCMS possède une partie administration qui permet aux utilisateurs ne sachant pas programmer
+de configurer tout les élements de chaque pages du site web.
 
-## Dossiers
-Le dossier htdocs contient le contenu public de votre site web.
-Le dossier webpage contient les pages de votre site web sous format JSON.
-Le dossier documentation contient une documentation générée sous Doxygen du code PHP.
-Le dossier Uml contient une représentation sous forme de diagramme des classes PHP.
-Le fichier Configuration Json contient les configurations du site web.
+## Technologies (pour les développeurs)
+VitrineCMS utilise la puissance de PHP 8.0 coté back-end et JavaScript coté front-end.
 
-## Description
-Il s'agit d'un CMS français conçu pour la création de sites vitrine, configurable facilement par un développeur ou un simple utilisateur.
-VitrineCMS est conçu pour être évolutif, un développeur peut créer ses propres conteneurs HTML facilement pour apporter de l'originalité aux sites qu'il développe.
-Mais VitrineCMS est aussi conçu pour qu'un utilisateur ne sachant pas programmer puisse concevoir son site ou apporter des modifications après son
+## Installation
+Un git clone suffit, placez ensuite les fichiers récupérés dans le repertoire de votre serveur web.
 
-## Fonctionnement
-Le CMS utilise le système de contrôleur de vue (FrontController.php).
-C'est-à-dire que le site n'est composé que d'un seul point d'entrer (index .php), et selon les paramètres GET entrés, le contrôleur de vue va s'adapter pour afficher la bonne vue à l'utilisateur avec le bon rôle (utilisateur ou administrateur)
-Lorsqu'un utilisateur effectue une requête au site pour avoir la vue au script index .php, le contrôleur de vue fait appel au dispatcher
+## Dossiers (pour les développeurs)
+Fichiers/Dossiers | Utilisations
+------------ | -------------
+htdocs | Contient le contenu public de votre site web.
+webpage | Contient les pages de votre site web sous format JSON.
+documentation | Contient une documentation générée sous Doxygen du code PHP.
+configuration.json | Contient la configuration du site vitrine.
 
-## Demander une vue
-L'utilisateur demande une vue en faisant une requête à l'aide du lien
-{domaine}/index.php. (ou simplement avec le nom de domaine, le serveur
-web appellera index.php automatiquement)
-L'utilisateur peut préciser la page du site qu'il souhaite accéder
-avec {domaine}/index.php?area={page}. Le dispatcher se chargera
-de générer la vue utilisateur avec la page demandé, puis
-le contrôleur de vue en fera l'affichage.
-<br>
-Si l'utilisateur souhaite basculer sur la vue administratrice de la page pour effectuer des modifications sur le contenu de la page, l'utilisateur doit ajouter le rôle dans le lien avec {domaine}/index.php?area={page}&role={admin}.
-Par défaut, si aucune page n'est spécifiée dans le lien, la page index sera demandé. Et si aucun rôle n'est spécifié, la vue utilisateur sera demandée.
+## Fonctionnement (pour les développeurs)
+Le CMS utilise le système de contrôleur de vue (FrontController.php, View.php, Dispatcher.php),
+c'est-à-dire que le site web n'est composé que d'un seul point d'entrée (index .php), et selon les paramètres "GET", le contrôleur de vue va s'adapter
+pour afficher la bonne vue à l'utilisateur avec le bon rôle (utilisateur ou administrateur).
+<br><br>
+Le serveur va donc à l'aide de la partie PHP récupérer les informations de la page demandé par l'utilisateur dans le fichier JSON correspondant à la page.
+Ce fichier JSON trouvé contiendra tout les élements de la page, puis le serveur génerera à partir de ces informations la page HTML
+envoyer à l'utilisateur.
+<br><br>
+Ce CMS est conçu pour être évolutif, un développeur peut créer ses propres conteneurs HTML facilement pour apporter des élements nouveaux à son site,
+pour cela, le développeur doit créer une nouvelle classe dans le dossier htdocs/php/elements, la faire hériter de HTMLContent.php
+et de redéfinir les méthodes onCreateHtml() et onCreateAdminHtml(). VitrineCMS s'occupera automatiquement de l'ajout de ce nouveau élement dans le CMS.
 
-## Vue administrateur
-Pour accéder à la vue "administrateur" d'une page, une connexion est demandée.
-La connexion demande le login précisé dans le fichier de configuration et le mot de passe crypté en sha512. Le mot de passe entré dans le fichier de configuration doit être en sha512 uniquement.
-<br>
+## Vue administrateur (pour les développeurs et utilisateurs)
 Login par défaut: login
 Mot de passe par défaut: password
